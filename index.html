@@ -371,9 +371,10 @@
       <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
         🛒 스마트스토어
       </a>
-      <button class="btn primary" type="button" onclick="openConsult()">
+      <!-- 상담 신청: 톡톡으로 바로 이동 -->
+      <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">
         📞 상담 신청
-      </button>
+      </a>
     </div>
   </div>
 </header>
@@ -410,7 +411,7 @@
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
         <a class="btn primary" href="#pricing">💰 비용 계산하기</a>
-        <button class="btn ghost" type="button" onclick="openConsult()">✅ 연면적 알려주기</button>
+        <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">✅ 연면적 알려주기</a>
       </div>
     </div>
 
@@ -439,8 +440,8 @@
               연면적만 주시면 옵션 수량을 계산해서 안내드립니다.
             </p>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <button class="btn primary" type="button" onclick="openConsult()">톡톡/전화로 연면적 보내기</button>
-              <a class="btn ghost" href="#examples">예시 보기</a>
+              <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">톡톡으로 연면적 보내기</a>
+              <a class="btn ghost" href="#examples">결과물 예시 보기</a>
             </div>
           </div>
         </div>
@@ -578,7 +579,7 @@
 
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn primary" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 스마트스토어에서 결제하기</a>
-          <button class="btn ghost" type="button" onclick="openConsult()">상담 후 결제 안내받기</button>
+          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">톡톡으로 옵션 수량 물어보기</a>
         </div>
       </div>
 
@@ -613,9 +614,9 @@
   <section id="examples">
     <h2 class="section-title">자료 예시</h2>
 
-    <!-- 추천 조합: 섹션 제목 아래 = 프리미엄 톤 1줄 -->
+    <!-- 섹션 1줄 설명: 프리미엄/명확/전환용 -->
     <p class="section-sub">
-      전후 비교는 결과가 아니라 <b>의사결정의 품질</b>을 보여줍니다. 현장 진단으로 ‘리스크 구조’를 먼저 잡고, 전략으로 연결합니다.
+      예시는 ‘멋’이 아니라 <b>근거</b>입니다. 전후 비교와 함께, 무엇을 먼저 고쳐야 돈이 안 새는지 보여드립니다.
     </p>
 
     <div class="two">
@@ -631,8 +632,7 @@
           style="display:block; aspect-ratio:16/9; border:0; background:#000;"
         ></iframe>
 
-        <!-- 추천 조합: 각 영상 캡션 = 유쾌 톤 1줄 -->
-        <div class="cap">단열·창호·설비 셋이 싸우면 돈이 새요. 셋을 한 팀으로 묶어드립니다 🙂</div>
+        <div class="cap">영상 1 | “제로에너지 2등급”은 운이 아니라, 순서와 근거의 결과입니다.</div>
       </div>
 
       <div class="media" aria-label="영상 예시 2">
@@ -646,7 +646,7 @@
           allowfullscreen
           style="display:block; aspect-ratio:16/9; border:0; background:#000;"
         ></iframe>
-        <div class="cap">누수는 공사 끝나고 ‘깜짝 등장’합니다. 그래서 뚱뚜루가 먼저 잡습니다 😤</div>
+        <div class="cap">영상 2 | 누수·결로·단열은 한 번에 묶어서 봐야, 공사가 두 번 나지 않습니다.</div>
       </div>
     </div>
   </section>
@@ -667,6 +667,7 @@
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn primary" href="tel:023134581">📞 02-313-4581</a>
           <a class="btn ghost" href="mailto:grenarch@naver.com">✉ grenarch@naver.com</a>
+          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">💬 네이버 톡톡</a>
         </div>
       </div>
 
@@ -717,34 +718,7 @@
 <div class="mobile-bar" role="navigation" aria-label="모바일 하단 메뉴">
   <div class="row">
     <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 스마트스토어</a>
-    <button class="btn primary" type="button" onclick="openConsult()">📞 상담 신청</button>
-  </div>
-</div>
-
-<!-- Consult modal -->
-<div class="modal-back" id="consultModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="상담 신청">
-    <div class="modal-head">
-      <b>상담 신청 (연면적만 알려주셔도 됩니다)</b>
-      <button class="close" type="button" onclick="closeConsult()">닫기</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-grid">
-        <div class="pill">📞 전화: <a href="tel:023134581" style="text-decoration:none">02-313-4581</a></div>
-        <div class="pill">✉ 메일: <a href="mailto:grenarch@naver.com" style="text-decoration:none">grenarch@naver.com</a></div>
-        <div class="pill">📝 사전 설문: <a href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener" style="text-decoration:none">구글폼 열기</a></div>
-        <div class="pill">🛒 결제/상품: <a href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener" style="text-decoration:none">스마트스토어 상품</a></div>
-      </div>
-
-      <div class="cta">
-        <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener">📝 구글폼 작성하고 상담 받기</a>
-        <a class="btn ghost" href="#pricing" onclick="closeConsult()">💰 비용 규칙 보기</a>
-      </div>
-
-      <p class="tiny" style="margin-top:12px">
-        팁: “연면적(㎡) + 용도 + 위치(구/동)”만 보내주시면 옵션 수량을 계산해서 안내드립니다.
-      </p>
-    </div>
+    <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">📞 톡톡 상담</a>
   </div>
 </div>
 
@@ -785,26 +759,6 @@
   if (areaInput){
     areaInput.addEventListener('input', updateCalc);
   }
-
-  // Modal controls
-  const modalBack = document.getElementById('consultModal');
-
-  function openConsult(){
-    modalBack.style.display = 'flex';
-    modalBack.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeConsult(){
-    modalBack.style.display = 'none';
-    modalBack.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-  }
-  modalBack.addEventListener('click', (e) => {
-    if (e.target === modalBack) closeConsult();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBack.style.display === 'flex') closeConsult();
-  });
 
   // Smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{

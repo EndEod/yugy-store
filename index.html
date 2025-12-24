@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>yugy.org | 그린리모델링 현장진단 & 전략기획 컨설팅 - 건축사 뚱뚜루</title>
+  <title>yugy.store | 그린리모델링 현장진단 & 전략기획 컨설팅 - 건축사 뚱뚜루</title>
   <meta name="description" content="수억 원 리모델링을 '감'으로 결정하시겠습니까? 건축사 뚱뚜루가 현장진단, 법규·구조 검토, 에너지 전략 수립으로 돈 새는 순서를 잡아드립니다." />
   <meta name="theme-color" content="#1f7a4b" />
 
@@ -34,7 +34,6 @@
     a{ color: inherit; }
     .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 18px; }
 
-    /* Header */
     header{
       position: sticky;
       top: 0;
@@ -94,6 +93,7 @@
       background: var(--card);
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       white-space: nowrap;
+      cursor: pointer;
     }
     .cta.primary{
       background: var(--brand);
@@ -103,10 +103,7 @@
     .cta.primary:hover{ filter: brightness(0.98); }
     .cta.secondary:hover{ background: rgba(0,0,0,0.03); }
 
-    /* Hero */
-    .hero{
-      padding: 42px 0 10px;
-    }
+    .hero{ padding: 42px 0 10px; }
     .hero-grid{
       display:grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -144,11 +141,7 @@
       font-size: 1.04rem;
     }
 
-    .quote-stack{
-      display:grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
+    .quote-stack{ display:grid; gap: 10px; margin-top: 18px; }
     .quote{
       border-left: 4px solid var(--warn);
       background: rgba(178,59,59,0.06);
@@ -160,12 +153,7 @@
     }
     .quote small{ display:block; font-weight: 600; color: rgba(90,29,29,0.75); margin-top: 6px; }
 
-    .chip-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
+    .chip-row{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 16px; }
     .chip{
       font-size: 0.92rem;
       padding: 8px 10px;
@@ -175,10 +163,7 @@
       color: var(--muted);
     }
 
-    .hero-side{
-      display:grid;
-      gap: 12px;
-    }
+    .hero-side{ display:grid; gap: 12px; }
     .side-card{
       background: var(--card);
       border: 1px solid var(--line);
@@ -186,34 +171,19 @@
       box-shadow: var(--shadow);
       padding: 18px;
     }
-    .side-card h3{
-      margin: 6px 0 8px;
-      font-size: 1.08rem;
-    }
+    .side-card h3{ margin: 6px 0 8px; font-size: 1.08rem; }
     .side-card p{ margin: 0; color: var(--muted); font-size: 0.98rem; }
-    .btn-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
+    .btn-row{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
 
-    /* Sections */
     section{
       padding: 46px 0;
       opacity: 0;
       transform: translateY(16px);
       transition: all 0.7s ease-out;
     }
-    section.visible{
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible{ opacity: 1; transform: translateY(0); }
 
-    .section-title{
-      text-align:center;
-      margin-bottom: 18px;
-    }
+    .section-title{ text-align:center; margin-bottom: 18px; }
     .section-title h2{
       margin: 0;
       font-size: 1.9rem;
@@ -267,14 +237,9 @@
     .callout b{ color: var(--brand); }
     .callout p{ margin: 8px 0 0; color: var(--muted); }
 
-    .list{
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
+    .list{ margin: 0; padding-left: 18px; color: var(--muted); }
     .list li{ margin: 6px 0; }
 
-    /* Accordion */
     details{
       background: var(--card);
       border: 1px solid var(--line);
@@ -304,17 +269,9 @@
       font-weight: 700;
       white-space: nowrap;
     }
-    details .body{
-      margin-top: 10px;
-      color: var(--muted);
-    }
+    details .body{ margin-top: 10px; color: var(--muted); }
 
-    /* Timeline */
-    .timeline{
-      display:grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
+    .timeline{ display:grid; gap: 10px; margin-top: 18px; }
     .step{
       display:grid;
       grid-template-columns: 70px 1fr;
@@ -341,27 +298,16 @@
     .step h3{ margin: 6px 0 4px; }
     .step p{ margin: 0; color: var(--muted); }
 
-    /* Pricing calculator */
     .calc{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
       margin-top: 18px;
     }
-    .calc .card{
-      padding: 18px;
-    }
-    .field{
-      display:grid;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    label{
-      font-weight: 800;
-      color: var(--brand2);
-      font-size: 0.98rem;
-    }
-    input, select{
+    .calc .card{ padding: 18px; }
+    .field{ display:grid; gap: 8px; margin-top: 10px; }
+    label{ font-weight: 800; color: var(--brand2); font-size: 0.98rem; }
+    input{
       width: 100%;
       padding: 12px 14px;
       border-radius: 14px;
@@ -369,10 +315,7 @@
       font-size: 1.02rem;
       background: #fff;
     }
-    .mini{
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
+    .mini{ font-size: 0.92rem; color: var(--muted); }
     .result{
       display:grid;
       gap: 10px;
@@ -388,11 +331,7 @@
       font-size: 0.98rem;
     }
     .row b{ color: var(--text); }
-    .total{
-      font-size: 1.1rem;
-      color: var(--text);
-      font-weight: 900;
-    }
+    .total{ font-size: 1.1rem; color: var(--text); font-weight: 900; }
     .badge{
       display:inline-flex;
       align-items:center;
@@ -405,7 +344,6 @@
       font-weight: 900;
     }
 
-    /* Media / examples */
     .media-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -419,18 +357,9 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .media video, .media img{
-      width:100%;
-      display:block;
-      background: #000;
-    }
-    .media .cap{
-      padding: 12px 14px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
+    .media video, .media img{ width:100%; display:block; background: #000; }
+    .media .cap{ padding: 12px 14px; color: var(--muted); font-size: 0.98rem; }
 
-    /* Footer */
     footer{
       background: #1f1f1f;
       color: rgba(255,255,255,0.9);
@@ -450,8 +379,28 @@
       margin-top: 10px;
       line-height: 1.7;
     }
+    .site-links{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+    }
+    .pill-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+    .pill-link:hover{ background: rgba(255,255,255,0.10); }
 
-    /* Responsive */
     @media (max-width: 880px){
       .hero-grid{ grid-template-columns: 1fr; }
       .grid-3{ grid-template-columns: 1fr; }
@@ -460,16 +409,125 @@
       .media-grid{ grid-template-columns: 1fr; }
       .menu{ display:none; }
     }
+
+    /* === 모바일 하단 고정 바 + 상담 선택 팝업 === */
+    .mobile-bar{
+      position: fixed;
+      left: 0; right: 0;
+      bottom: 0;
+      z-index: 2000;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(253,252,245,0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -10px 24px rgba(0,0,0,0.08);
+      display: none;
+    }
+    .mobile-bar .inner{
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .mobile-bar a{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 10px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+      font-size: 0.98rem;
+    }
+    .mobile-bar a.primary{
+      background: var(--brand);
+      color: #fff;
+      border-color: rgba(31,122,75,0.25);
+    }
+    .mobile-bar a:hover{ filter: brightness(0.99); }
+
+    @media (max-width: 880px){
+      .mobile-bar{ display: block; }
+      body{ padding-bottom: 86px; }
+    }
+
+    .modal-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.42);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+    .modal{
+      width: min(520px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+      overflow: hidden;
+    }
+    .modal .head{
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .modal .head b{ font-size: 1.05rem; }
+    .modal .close{
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.02);
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .modal .body{ padding: 14px 16px 16px; }
+    .modal .body p{ margin: 0 0 12px; color: var(--muted); }
+    .modal .actions{
+      display:grid;
+      gap: 10px;
+    }
+    .modal .actions a{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.02);
+      text-decoration: none;
+      font-weight: 900;
+    }
+    .modal .actions a strong{ color: var(--text); }
+    .modal .actions a span{ color: var(--muted); font-weight: 700; }
+    .modal .actions a.primary{
+      background: rgba(31,122,75,0.10);
+      border-color: rgba(31,122,75,0.22);
+    }
+    .modal .actions a:hover{ filter: brightness(0.99); }
+
+    .modal-open{ display:flex; }
   </style>
 </head>
 
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="yugy.org 홈">
+      <a class="brand" href="#top" aria-label="yugy.store 홈">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          <b>yugy.org</b><br />
+          <b>yugy.store</b><br />
           <span>건축사 뚱뚜루 | 그린리모델링 전략기획</span>
         </div>
       </a>
@@ -483,12 +541,16 @@
         <a href="#contact">상담</a>
       </nav>
 
-      <a class="cta primary" href="#contact">📞 상담 신청</a>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="cta secondary" id="smartstoreTop" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+          🛒 스마트스토어
+        </a>
+        <a class="cta primary open-consult" href="#contact">📞 상담 신청</a>
+      </div>
     </div>
   </header>
 
   <main id="top" class="wrap">
-    <!-- HERO -->
     <div class="hero">
       <div class="hero-grid">
         <div class="hero-card">
@@ -523,9 +585,11 @@
           </div>
 
           <div class="btn-row">
-            <!-- TODO: 스마트스토어 링크가 있으면 아래 href를 교체하세요 -->
             <a class="cta secondary" href="#pricing">🧾 비용 계산하기</a>
-            <a class="cta primary" href="#contact">✅ 연면적만 알려주기</a>
+            <a class="cta primary open-consult" href="#contact">✅ 연면적만 알려주기</a>
+            <a class="cta secondary" id="smartstoreHero" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+              🛒 스마트스토어 결제
+            </a>
           </div>
         </div>
 
@@ -548,7 +612,7 @@
               연면적만 주시면, 옵션 수량을 계산해서 안내드립니다.
             </p>
             <div class="btn-row">
-              <a class="cta primary" href="#contact">톡톡/전화로 연면적 보내기</a>
+              <a class="cta primary open-consult" href="#contact">톡톡/전화로 연면적 보내기</a>
               <a class="cta secondary" href="#examples">예시 보기</a>
             </div>
           </div>
@@ -565,7 +629,6 @@
       </div>
     </div>
 
-    <!-- WHY -->
     <section id="why">
       <div class="section-title">
         <h2>왜 ‘건축사’ 컨설팅이 필요한가요?</h2>
@@ -599,7 +662,6 @@
       </div>
     </section>
 
-    <!-- SCOPE -->
     <section id="scope">
       <div class="section-title">
         <h2>서비스 제공 범위</h2>
@@ -667,7 +729,6 @@
       </details>
     </section>
 
-    <!-- PROCESS -->
     <section id="process">
       <div class="section-title">
         <h2>진행 프로세스</h2>
@@ -706,7 +767,6 @@
       </div>
     </section>
 
-    <!-- PRICING -->
     <section id="pricing">
       <div class="section-title">
         <h2>컨설팅 비용 및 진행 안내</h2>
@@ -739,6 +799,13 @@
             <div class="row total"><span>예상 총액</span><b id="totalCost">-</b></div>
             <div class="badge" id="badge">연면적 입력하면 옵션 수량이 계산됩니다</div>
           </div>
+
+          <div class="btn-row" style="margin-top:14px;">
+            <a class="cta primary" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+              🛒 스마트스토어에서 결제하기
+            </a>
+            <a class="cta secondary open-consult" href="#contact">상담 후 결제 안내받기</a>
+          </div>
         </div>
 
         <div class="card">
@@ -751,26 +818,20 @@
           </p>
 
           <div class="callout" style="margin-top:14px;">
-            <b>기업/관공서/사옥 핫라인</b>
+            <b>기업/관공서/사옥 문의</b>
             <p style="margin-top:8px; color:var(--muted);">
-              그린리모델링 사업부 대표: 김기언<br/>
-              직통: <a href="tel:01037829121">010-3782-9121</a>
+              대표번호: <a href="tel:+8223134581">02-313-4581</a>
             </p>
           </div>
 
-          <p class="mini" style="margin-top:14px;">
-            도면 미보유/특수용도/복합설비 등 난이도 상승 시 별도 견적이 적용될 수 있습니다(톡톡 안내).
-          </p>
-
           <div class="btn-row">
-            <a class="cta primary" href="#contact">📩 지금 상담하기</a>
+            <a class="cta primary open-consult" href="#contact">📩 지금 상담하기</a>
             <a class="cta secondary" href="#examples">📽️ 예시 보기</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXAMPLES -->
     <section id="examples">
       <div class="section-title">
         <h2>자료 예시</h2>
@@ -779,13 +840,11 @@
 
       <div class="media-grid">
         <div class="media">
-          <!-- 이미지 예시: 기존 파일이 있으면 교체 -->
           <img src="001.png" alt="BIM 기반 분석 자료 예시" />
           <div class="cap">BIM 기반 입체 분석 자료 예시 (이미지 파일로 교체 가능)</div>
         </div>
 
         <div class="media">
-          <!-- 영상 예시: 파일이 있으면 교체 (mp4 권장) -->
           <video controls preload="metadata" poster="004.png">
             <source src="greenremodel_example_01.mp4" type="video/mp4" />
             브라우저가 비디오 재생을 지원하지 않습니다.
@@ -795,7 +854,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="section-title">
         <h2>상담 신청하기</h2>
@@ -811,25 +869,27 @@
           <h3>사전 설문 작성</h3>
           <p>설문을 작성하면 상담이 빨라지고 정확해집니다.</p>
           <div class="btn-row">
-            <a class="cta primary" href="https://blog.naver.com/grenarch/224091708769" target="_blank" rel="noopener">사전 설문 링크</a>
+            <a class="cta primary" href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener">구글폼 작성하기</a>
           </div>
         </div>
 
         <div class="card">
           <div class="icon" aria-hidden="true">☎️</div>
           <h3>전화 상담</h3>
-          <p>기업/특수 프로젝트 포함, 빠르게 연결합니다.</p>
+          <p>대표번호로 바로 연결합니다.</p>
           <div class="btn-row">
-            <a class="cta primary" href="tel:01037829121">010-3782-9121</a>
+            <a class="cta primary" href="tel:+8223134581">02-313-4581</a>
           </div>
         </div>
 
         <div class="card">
-          <div class="icon" aria-hidden="true">✉️</div>
-          <h3>이메일 문의</h3>
-          <p>자료(건축물대장, 도면 등)를 함께 보내주시면 진단이 더 빨라집니다.</p>
+          <div class="icon" aria-hidden="true">🛒</div>
+          <h3>스마트스토어 상품</h3>
+          <p>상담 후 결제를 권장합니다. 상품 페이지로 이동합니다.</p>
           <div class="btn-row">
-            <a class="cta secondary" href="mailto:contact@yugy.org">contact@yugy.org</a>
+            <a class="cta primary" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+              스마트스토어 열기
+            </a>
           </div>
         </div>
       </div>
@@ -856,35 +916,97 @@
           </div>
         </div>
         <div class="fine" style="margin-top:12px;">
-          Copyright © 2025 yugy.org. All rights reserved.
+          Copyright © 2025 yugy.store. All rights reserved.
         </div>
       </div>
 
       <div>
         <div style="font-weight:900; margin-bottom:10px;">바로 연결</div>
         <div class="fine">
-          📞 <a href="tel:01037829121">010-3782-9121</a><br/>
-          ✉️ <a href="mailto:contact@yugy.org">contact@yugy.org</a><br/>
-          🌐 <a href="https://yugy.org">yugy.org</a>
+          🛒 <a href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">스마트스토어 상품</a><br/>
+          📞 <a href="tel:+8223134581">02-313-4581</a><br/>
+          ✉️ <a href="mailto:grenarch@naver.com">grenarch@naver.com</a><br/>
+          🌐 <a href="https://yugy.store" target="_blank" rel="noopener">https://yugy.store</a>
+        </div>
+
+        <div class="site-links" aria-label="뚱뚜루네 웹사이트 링크">
+          <a class="pill-link" href="https://yugy.org" target="_blank" rel="noopener">🌿 yugy.org</a>
+          <a class="pill-link" href="https://yugy.site" target="_blank" rel="noopener">🧭 yugy.site</a>
+          <a class="pill-link" href="https://yugy.cloud" target="_blank" rel="noopener">☁️ yugy.cloud</a>
+          <a class="pill-link" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 뚱뚜루 스마트스토어</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- 모바일 하단 고정 바 -->
+  <div class="mobile-bar" aria-label="모바일 빠른 상담 바">
+    <div class="inner">
+      <a href="tel:+8223134581" class="primary">📞 전화</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener">📝 설문</a>
+      <a href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 스토어</a>
+    </div>
+  </div>
+
+  <!-- 상담 선택 팝업 -->
+  <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="consultTitle">
+    <div class="modal">
+      <div class="head">
+        <b id="consultTitle">상담 채널 선택</b>
+        <button class="close" type="button" id="consultClose">닫기</button>
+      </div>
+      <div class="body">
+        <p>연면적만 알려주시면 옵션 수량까지 계산해서 안내드려요.</p>
+        <div class="actions">
+          <a class="primary" href="tel:+8223134581">
+            <div>
+              <strong>📞 전화로 바로 상담</strong><br />
+              <span>02-313-4581</span>
+            </div>
+            <span>즉시 연결</span>
+          </a>
+
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener">
+            <div>
+              <strong>📝 구글폼 먼저 작성</strong><br />
+              <span>상담이 훨씬 빨라져요</span>
+            </div>
+            <span>새 창</span>
+          </a>
+
+          <a href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+            <div>
+              <strong>🛒 스마트스토어 상품 보기</strong><br />
+              <span>상담 후 결제 권장</span>
+            </div>
+            <span>새 창</span>
+          </a>
+
+          <a href="#contact" id="goContact">
+            <div>
+              <strong>📌 상담 안내 섹션 보기</strong><br />
+              <span>유의사항/절차 확인</span>
+            </div>
+            <span>이동</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // 섹션 등장 애니메이션
+    // 스크롤 등장 애니메이션
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
-
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
     // 비용 계산기
     const BASE_FEE = 15000000;
     const INCLUDED_AREA = 300;
-    const UNIT_PRICE = 20000; // 1㎡당
+    const UNIT_PRICE = 20000;
     const ENTERPRISE_THRESHOLD = 1000;
 
     const areaInput = document.getElementById('area');
@@ -896,10 +1018,11 @@
     const badgeEl = document.getElementById('badge');
 
     const fmt = (n) => new Intl.NumberFormat('ko-KR').format(n) + '원';
-
     function clampMin(n, min){ return n < min ? min : n; }
 
     function calc(){
+      if (!areaInput) return;
+
       const raw = Number(areaInput.value);
       if (!Number.isFinite(raw) || raw <= 0){
         areaFloorEl.textContent = '-';
@@ -916,7 +1039,7 @@
 
       const floored = Math.floor(raw);
       const extraArea = clampMin(floored - INCLUDED_AREA, 0);
-      const optionQty = extraArea; // 옵션 수량 = 초과면적
+      const optionQty = extraArea;
       const extraCost = optionQty * UNIT_PRICE;
       const total = BASE_FEE + extraCost;
 
@@ -939,8 +1062,45 @@
       }
     }
 
-    areaInput.addEventListener('input', calc);
-    calc();
+    if (areaInput) {
+      areaInput.addEventListener('input', calc);
+      calc();
+    }
+
+    // === 상담 선택 팝업 ===
+    const modal = document.getElementById('consultModal');
+    const closeBtn = document.getElementById('consultClose');
+    const goContact = document.getElementById('goContact');
+
+    function openModal(){
+      modal.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('modal-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.open-consult').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('modal-open')) closeModal();
+    });
+
+    goContact.addEventListener('click', () => {
+      closeModal();
+    });
   </script>
 </body>
 </html>

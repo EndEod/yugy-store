@@ -24,6 +24,7 @@
             position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
             padding: 10px 20px; background: #e67e22; color: white; border-radius: 30px;
             text-decoration: none; font-weight: bold; display: none; cursor: pointer;
+            z-index: 100;
         }
     </style>
     <script type="importmap">
@@ -52,36 +53,49 @@
 
         // 1. 기본 세팅
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x87CEEB); // 하늘색 배경
-        scene.fog = new THREE.Fog(0x87CEEB, 10, 50);
+        scene.background = new THREE.Color(0x87CEEB); 
+        
+        // 안개 설정 (멀리까지 보이게)
+        scene.fog = new THREE.Fog(0x87CEEB, 20, 500);
 
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 1.7, 5); // 사람 눈높이 (1.7m)
+        // 카메라 설정
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.set(0, 1.7, 30); // 건물 전체를 보기 위해 조금 더 뒤로 이동 (30m)
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMap.enabled = true;
+        // 그림자 부드럽게 (PCFSoftShadowMap)
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap; 
         document.body.appendChild(renderer.domElement);
 
-        // 조명
-        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.8);
+        // 조명 설정
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
         scene.add(hemiLight);
-        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        dirLight.position.set(10, 20, 10);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        dirLight.position.set(50, 100, 50);
         dirLight.castShadow = true;
+        dirLight.shadow.mapSize.width = 4096; // 그림자 해상도 높임
+        dirLight.shadow.mapSize.height = 4096;
+        dirLight.shadow.camera.left = -100;
+        dirLight.shadow.camera.right = 100;
+        dirLight.shadow.camera.top = 100;
+        dirLight.shadow.camera.bottom = -100;
         scene.add(dirLight);
 
-        // 바닥 (임시)
-        const floorGeo = new THREE.PlaneGeometry(100, 100);
-        const floorMat = new THREE.MeshStandardMaterial({ color: 0x333333 });
+        // 바닥 (대지)
+        const floorGeo = new THREE.PlaneGeometry(1000, 1000);
+        const floorMat = new THREE.MeshStandardMaterial({ color: 0x333333, roughness: 0.8 });
         const floor = new THREE.Mesh(floorGeo, floorMat);
         floor.rotation.x = -Math.PI / 2;
         floor.receiveShadow = true;
         scene.add(floor);
 
-        // 2. 컨트롤 (1인칭 시점)
+        // 2. 컨트롤
         const controls = new PointerLockControls(camera, document.body);
         const instruction = document.getElementById('instruction');
+        const shopBtn = document.getElementById('shopBtn');
 
         document.body.addEventListener('click', () => {
             controls.lock();
@@ -89,17 +103,23 @@
 
         controls.addEventListener('lock', () => {
             instruction.style.display = 'none';
+            shopBtn.style.display = 'none';
         });
         controls.addEventListener('unlock', () => {
             instruction.style.display = 'block';
+            shopBtn.style.display = 'block';
         });
 
-        // 3. BIM 모델 불러오기 (model.glb)
+        // 3. 모델 불러오기 (여기가 핵심!)
         const loader = new GLTFLoader();
         loader.load(
-            './model.glb', // ★ 여기에 뚱뚜루님 파일이 들어갑니다
+            './model.glb', 
             function (gltf) {
                 const model = gltf.scene;
+                
+                // [★핵심 수정] 밀리미터(mm)를 미터(m)로 변환 (1/1000 축소)
+                model.scale.set(0.001, 0.001, 0.001); 
+
                 model.traverse(function (object) {
                     if (object.isMesh) {
                         object.castShadow = true;
@@ -112,7 +132,7 @@
             undefined,
             function (error) {
                 console.error(error);
-                document.getElementById('loading').innerHTML = "⚠️ model.glb 파일을 찾을 수 없습니다.<br>GitHub에 파일을 올려주세요.";
+                document.getElementById('loading').innerHTML = "⚠️ model.glb 로드 실패<br>파일명을 확인하세요.";
             }
         );
 
@@ -160,22 +180,22 @@
                 direction.x = Number(moveRight) - Number(moveLeft);
                 direction.normalize();
 
-                if (moveForward || moveBackward) velocity.z -= direction.z * 50.0 * delta; // 속도 조절
-                if (moveLeft || moveRight) velocity.x -= direction.x * 50.0 * delta;
+                // 이동 속도 (건물 규모에 맞게 시원하게)
+                if (moveForward || moveBackward) velocity.z -= direction.z * 100.0 * delta;
+                if (moveLeft || moveRight) velocity.x -= direction.x * 100.0 * delta;
 
                 controls.moveRight(-velocity.x * delta);
                 controls.moveForward(-velocity.z * delta);
 
                 prevTime = time;
             } else {
-                prevTime = performance.now(); // 멈춰있을 때 시간 갱신
+                prevTime = performance.now();
             }
 
             renderer.render(scene, camera);
         }
         animate();
 
-        // 반응형
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();

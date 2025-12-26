@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>yugy.store | 건축사 뚱뚜루 | 그린리모델링 전략기획</title>
-  <meta name="description" content="그린리모델링 현장진단 & 전략 기획 컨설팅. 수억 원이 드는 리모델링, 감으로 결정하지 마세요. 건축사 뚱뚜루가 먼저 잡아드립니다." />
+  <meta id="metaDesc" name="description" content="그린리모델링 현장진단 & 전략 기획 컨설팅. 수억 원이 드는 리모델링, 감으로 결정하지 마세요. 건축사 뚱뚜루가 먼저 잡아드립니다." />
+
+  <!-- (선택) 언어별 힌트: SEO/공유에 도움 -->
+  <link rel="alternate" hreflang="ko" href="?lang=ko" />
+  <link rel="alternate" hreflang="en" href="?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="?" />
+
   <style>
     :root{
       --bg:#fbfaf3;
@@ -65,6 +71,7 @@
     .top-actions{
       display:flex;gap:10px;align-items:center;justify-content:flex-end;
       min-width:240px;
+      flex-wrap:wrap;
     }
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -77,6 +84,7 @@
       transition:transform .05s ease, background .2s ease, border .2s ease;
       box-shadow:0 8px 20px rgba(0,0,0,.05);
       white-space:nowrap;
+      appearance:none;
     }
     .btn:active{transform:translateY(1px)}
     .btn.primary{
@@ -87,6 +95,22 @@
     }
     .btn.primary:hover{background:#18663e}
     .btn.ghost:hover{border-color:#d6d2c3;background:#fffdf6}
+
+    /* Language toggle */
+    .lang-group{display:flex;gap:8px;align-items:center}
+    .btn.lang{
+      padding:10px 12px;
+      font-weight:900;
+      box-shadow:none;
+      border-color:#e3dfd0;
+      background:#fff;
+    }
+    .btn.lang.active{
+      border-color:rgba(31,122,74,.35);
+      background:rgba(31,122,74,.08);
+      color:var(--green);
+    }
+
     .grid{
       display:grid;grid-template-columns: 1.2fr .9fr;
       gap:18px;margin-top:24px;
@@ -267,53 +291,6 @@
     }
     footer .links a:hover{border-color:#d6d2c3;background:#fffdf6}
 
-    /* Modal */
-    .modal-back{
-      position:fixed;inset:0;
-      background:rgba(0,0,0,.45);
-      display:none;
-      align-items:center;justify-content:center;
-      padding:18px;
-      z-index:2000;
-    }
-    .modal{
-      width:min(720px, 100%);
-      background:#fff;
-      border-radius:22px;
-      border:1px solid var(--line);
-      box-shadow:0 18px 60px rgba(0,0,0,.25);
-      overflow:hidden;
-    }
-    .modal-head{
-      padding:16px 18px;
-      display:flex;align-items:center;justify-content:space-between;
-      border-bottom:1px solid var(--line);
-      background:#fffdf6;
-    }
-    .modal-head b{font-size:16px}
-    .modal-body{padding:18px}
-    .modal-grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;
-    }
-    .modal .close{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:999px;
-      padding:10px 12px;
-      cursor:pointer;
-      font-weight:900;
-    }
-    .modal .close:hover{background:#fffdf6}
-    .modal .cta{
-      display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;
-    }
-    .pill{
-      padding:10px 12px;border-radius:14px;
-      border:1px solid #e6e1d2;
-      background:#fff;
-      font-weight:900;
-    }
-
     /* Mobile */
     @media (max-width: 980px){
       .grid{grid-template-columns:1fr}
@@ -323,7 +300,6 @@
       h1{font-size:34px}
       .two{grid-template-columns:1fr}
       .pricing{grid-template-columns:1fr}
-      .modal-grid{grid-template-columns:1fr}
     }
 
     /* Mobile bottom bar */
@@ -340,9 +316,13 @@
       max-width:1100px;margin:0 auto;
       display:grid;grid-template-columns:1fr 1fr;gap:10px;
     }
+    .mobile-bar .row3{
+      max-width:1100px;margin:8px auto 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
     @media (max-width: 880px){
       .mobile-bar{display:block}
-      .wrap{padding-bottom:130px}
+      .wrap{padding-bottom:160px}
     }
   </style>
 </head>
@@ -350,29 +330,33 @@
 
 <header>
   <div class="nav">
-    <a class="brand" href="#top" aria-label="yugy.store 홈">
+    <a class="brand" href="#top" aria-label="yugy.store 홈" data-i18n-aria="aria_home">
       <span class="logo" aria-hidden="true"></span>
       <div>
         <b>yugy.store</b>
-        <small>건축사 뚱뚜루 | 그린리모델링 전략기획</small>
+        <small data-i18n="brand_sub">건축사 뚱뚜루 | 그린리모델링 전략기획</small>
       </div>
     </a>
 
-    <nav aria-label="페이지 메뉴">
-      <a href="#why">왜 건축사?</a>
-      <a href="#scope">제공 범위</a>
-      <a href="#process">프로세스</a>
-      <a href="#pricing">비용 안내</a>
-      <a href="#examples">예시</a>
-      <a href="#consult">상담</a>
+    <nav aria-label="페이지 메뉴" data-i18n-aria="aria_nav">
+      <a href="#why" data-i18n="nav_why">왜 건축사?</a>
+      <a href="#scope" data-i18n="nav_scope">제공 범위</a>
+      <a href="#process" data-i18n="nav_process">프로세스</a>
+      <a href="#pricing" data-i18n="nav_pricing">비용 안내</a>
+      <a href="#examples" data-i18n="nav_examples">예시</a>
+      <a href="#consult" data-i18n="nav_consult">상담</a>
     </nav>
 
     <div class="top-actions">
-      <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+      <div class="lang-group" aria-label="Language" data-i18n-aria="aria_lang">
+        <button class="btn lang" type="button" data-lang="ko">한국어</button>
+        <button class="btn lang" type="button" data-lang="en">EN</button>
+      </div>
+
+      <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener" data-i18n="btn_store">
         🛒 스마트스토어
       </a>
-      <!-- 상담 신청: 톡톡으로 바로 이동 -->
-      <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">
+      <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener" data-i18n="btn_consult">
         📞 상담 신청
       </a>
     </div>
@@ -383,35 +367,38 @@
 
   <div class="grid">
     <div class="card">
-      <span class="tag">[그린리모델링] 현장진단 & 전략 기획 컨설팅</span>
+      <span class="tag" data-i18n="tag_service">[그린리모델링] 현장진단 & 전략 기획 컨설팅</span>
 
-      <h1>수억 원이 드는 리모델링,<br><span style="color:#b03023;">‘감’</span>으로 결정하시겠습니까?</h1>
-      <p class="lead">
+      <h1 data-i18n-html="hero_title">
+        수억 원이 드는 리모델링,<br><span style="color:#b03023;">‘감’</span>으로 결정하시겠습니까?
+      </h1>
+
+      <p class="lead" data-i18n-html="hero_lead">
         그린리모델링은 단순한 집수리가 아닙니다.<br>
         에너지 성능을 혁신하고, 법적 리스크를 줄이고, 자산 가치를 다시 설계하는 작업입니다.
       </p>
 
       <div class="quotes">
         <div class="quote">
-          “한 번 잘못 고치면, 쌩돈 내고 계~속 다시 고칩니다.”
-          <small>순서가 틀리면, 공사가 두 번 납니다.</small>
+          <span data-i18n="q1_main">“한 번 잘못 고치면, 쌩돈 내고 계~속 다시 고칩니다.”</span>
+          <small data-i18n="q1_sub">순서가 틀리면, 공사가 두 번 납니다.</small>
         </div>
         <div class="quote">
-          “누수는 공사 끝나고 나타나고, 쌩돈이 계~속 나가기 시작합니다.”
-          <small>착공 전, 건축사가 먼저 잡아야 돈이 안 샙니다.</small>
+          <span data-i18n="q2_main">“누수는 공사 끝나고 나타나고, 쌩돈이 계~속 나가기 시작합니다.”</span>
+          <small data-i18n="q2_sub">착공 전, 건축사가 먼저 잡아야 돈이 안 샙니다.</small>
         </div>
       </div>
 
-      <div class="chips" aria-label="핵심 포인트">
-        <div class="chip"><span class="dot"></span> 건물 종합검진: 노후 건물 MRI & 처방전</div>
-        <div class="chip"><span class="dot"></span> 건물 심폐소생: 철거만이 답일까요?</div>
-        <div class="chip"><span class="dot"></span> 건물 노화 방지: 10년 더 젊어지는 처방</div>
-        <div class="chip"><span class="dot"></span> 뚱뚜루 마스터플랜: 실패 없는 선행 기획</div>
+      <div class="chips" aria-label="핵심 포인트" data-i18n-aria="aria_points">
+        <div class="chip"><span class="dot"></span> <span data-i18n="chip1">건물 종합검진: 노후 건물 MRI & 처방전</span></div>
+        <div class="chip"><span class="dot"></span> <span data-i18n="chip2">건물 심폐소생: 철거만이 답일까요?</span></div>
+        <div class="chip"><span class="dot"></span> <span data-i18n="chip3">건물 노화 방지: 10년 더 젊어지는 처방</span></div>
+        <div class="chip"><span class="dot"></span> <span data-i18n="chip4">뚱뚜루 마스터플랜: 실패 없는 선행 기획</span></div>
       </div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-        <a class="btn primary" href="#pricing">💰 비용 계산하기</a>
-        <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">✅ 연면적 알려주기</a>
+        <a class="btn primary" href="#pricing" data-i18n="btn_calc">💰 비용 계산하기</a>
+        <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener" data-i18n="btn_send_area">✅ 연면적 알려주기</a>
       </div>
     </div>
 
@@ -420,8 +407,8 @@
         <div class="kicker">
           <div class="badge">💎</div>
           <div>
-            <h3>Special Benefit</h3>
-            <p class="muted" style="margin:0">
+            <h3 data-i18n="benefit_title">특별 혜택</h3>
+            <p class="muted" style="margin:0" data-i18n-html="benefit_body">
               본 기획 컨설팅 이용 후, (주)여기건축사사무소를 통해 실시설계/인허가 계약을 진행하시거나
               프리미엄 컨설팅을 이용하실 경우, 스마트스토어에서 결제한 기획 컨설팅 비용 전액을 본 계약 대금에서 차감합니다.
               <br><span class="tiny">* 현금 환급이 아닌, 계약 대금 차감 방식입니다.</span>
@@ -434,14 +421,14 @@
         <div class="kicker">
           <div class="badge">⏱</div>
           <div style="width:100%">
-            <h3>지금 딱 1분만</h3>
-            <p class="muted" style="margin:0 0 12px">
+            <h3 data-i18n="minute_title">지금 딱 1분만</h3>
+            <p class="muted" style="margin:0 0 12px" data-i18n-html="minute_body">
               “우리 건물, 300㎡ 넘는지부터 확인해 드릴까요?”<br>
               연면적만 주시면 옵션 수량을 계산해서 안내드립니다.
             </p>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">톡톡으로 연면적 보내기</a>
-              <a class="btn ghost" href="#examples">결과물 예시 보기</a>
+              <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener" data-i18n="minute_btn1">톡톡으로 연면적 보내기</a>
+              <a class="btn ghost" href="#examples" data-i18n="minute_btn2">결과물 예시 보기</a>
             </div>
           </div>
         </div>
@@ -451,8 +438,8 @@
         <div class="kicker">
           <div class="badge">📌</div>
           <div>
-            <h3>뚱뚜루의 원칙</h3>
-            <p class="muted" style="margin:0">
+            <h3 data-i18n="principle_title">뚱뚜루의 원칙</h3>
+            <p class="muted" style="margin:0" data-i18n-html="principle_body">
               시공사는 “어떻게 고칠지”에 강하고,<br>
               건축사는 “고쳐도 되는지, 어디까지 바꿀 수 있는지”에 강합니다.<br><br>
               그린리모델링은 둘 다 필요하지만, 순서는 건축사가 먼저 잡아야 돈이 안 샙니다.
@@ -464,143 +451,143 @@
   </div>
 
   <section id="why">
-    <h2 class="section-title">왜 ‘건축사’의 컨설팅이 필요한가요?</h2>
-    <p class="section-sub">
+    <h2 class="section-title" data-i18n="why_title">왜 ‘건축사’의 컨설팅이 필요한가요?</h2>
+    <p class="section-sub" data-i18n-html="why_sub">
       시공사는 “어떻게 고칠지”에 강하고, 건축사는 “고쳐도 되는지, 어디까지 바꿀 수 있는지”에 강합니다.<br>
       법규·구조·에너지 성능·자산가치를 한 번에 통합적으로 봅니다.
     </p>
     <div class="two">
       <div class="box">
-        <div class="callout">✅ 현장 중심 정밀 진단</div>
+        <div class="callout" data-i18n="why_box1_title">✅ 현장 중심 정밀 진단</div>
         <ul class="list">
-          <li>누수, 결로, 균열, 단열 파괴부위를 현장에서 추적합니다.</li>
-          <li>도면이 없어도 “현재 상태”를 기준으로 판단 근거를 잡습니다.</li>
+          <li data-i18n="why_box1_li1">누수, 결로, 균열, 단열 파괴부위를 현장에서 추적합니다.</li>
+          <li data-i18n="why_box1_li2">도면이 없어도 “현재 상태”를 기준으로 판단 근거를 잡습니다.</li>
         </ul>
       </div>
       <div class="box">
-        <div class="callout">✅ 리스크 사전 차단</div>
+        <div class="callout" data-i18n="why_box2_title">✅ 리스크 사전 차단</div>
         <ul class="list">
-          <li>증축/대수선 가능성, 법규 적합성 등 핵심 리스크를 먼저 확인합니다.</li>
-          <li>공사 후 뒤늦게 터지는 비용 폭탄을 줄입니다.</li>
+          <li data-i18n="why_box2_li1">증축/대수선 가능성, 법규 적합성 등 핵심 리스크를 먼저 확인합니다.</li>
+          <li data-i18n="why_box2_li2">공사 후 뒤늦게 터지는 비용 폭탄을 줄입니다.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="scope">
-    <h2 class="section-title">서비스 제공 범위</h2>
-    <p class="section-sub">단순 보고서가 아닌, 내 건물의 “미래 전략 지침서”를 제공합니다.</p>
+    <h2 class="section-title" data-i18n="scope_title">서비스 제공 범위</h2>
+    <p class="section-sub" data-i18n="scope_sub">단순 보고서가 아닌, 내 건물의 “미래 전략 지침서”를 제공합니다.</p>
 
     <div class="two">
       <div class="box">
-        <h3 style="margin:0 0 10px">1. 정밀 현장 조사 (Health Check)</h3>
+        <h3 style="margin:0 0 10px" data-i18n="scope1_title">1. 정밀 현장 조사 (Health Check)</h3>
         <ul class="list">
-          <li>외피 상태, 창호, 단열재 노후도 점검</li>
-          <li>누수, 결로, 균열 등 구조적 열화 요소 추적</li>
-          <li>설비, 배관, 전기 설비 기본 상태 진단</li>
+          <li data-i18n="scope1_li1">외피 상태, 창호, 단열재 노후도 점검</li>
+          <li data-i18n="scope1_li2">누수, 결로, 균열 등 구조적 열화 요소 추적</li>
+          <li data-i18n="scope1_li3">설비, 배관, 전기 설비 기본 상태 진단</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3 style="margin:0 0 10px">2. 법규 및 구조 적합성 검토</h3>
+        <h3 style="margin:0 0 10px" data-i18n="scope2_title">2. 법규 및 구조 적합성 검토</h3>
         <ul class="list">
-          <li><b>증축 및 대수선 가능 여부 법적 검토 (핵심)</b></li>
-          <li>현행법 기준 적용 시 실내 면적 및 구조 변화 분석</li>
-          <li>기존 구조 활용 가능성 및 배치 효율성 검토</li>
+          <li data-i18n="scope2_li1"><b>증축 및 대수선 가능 여부 법적 검토 (핵심)</b></li>
+          <li data-i18n="scope2_li2">현행법 기준 적용 시 실내 면적 및 구조 변화 분석</li>
+          <li data-i18n="scope2_li3">기존 구조 활용 가능성 및 배치 효율성 검토</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3 style="margin:0 0 10px">3. 그린리모델링 최적화 전략 수립</h3>
+        <h3 style="margin:0 0 10px" data-i18n="scope3_title">3. 그린리모델링 최적화 전략 수립</h3>
         <ul class="list">
-          <li>에너지 효율 개선 우선순위 제시 (단열/창호/설비 등)</li>
-          <li>가성비 높은 친환경 자재 및 공법 제안</li>
-          <li>성능 향상 기대 효과 시뮬레이션 개요</li>
+          <li data-i18n="scope3_li1">에너지 효율 개선 우선순위 제시 (단열/창호/설비 등)</li>
+          <li data-i18n="scope3_li2">가성비 높은 친환경 자재 및 공법 제안</li>
+          <li data-i18n="scope3_li3">성능 향상 기대 효과 시뮬레이션 개요</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3 style="margin:0 0 10px">4. 전략 기획 보고서 제공 (Final Report)</h3>
+        <h3 style="margin:0 0 10px" data-i18n="scope4_title">4. 전략 기획 보고서 제공 (Final Report)</h3>
         <ul class="list">
-          <li>기초 현황도면 작성 (도면 미보유 시)</li>
-          <li>종합 진단 요약 및 리스크 평가</li>
-          <li>향후 진행 로드맵 및 예상 공정 제안</li>
+          <li data-i18n="scope4_li1">기초 현황도면 작성 (도면 미보유 시)</li>
+          <li data-i18n="scope4_li2">종합 진단 요약 및 리스크 평가</li>
+          <li data-i18n="scope4_li3">향후 진행 로드맵 및 예상 공정 제안</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="process">
-    <h2 class="section-title">진행 프로세스</h2>
-    <p class="section-sub">깊이 있는 분석을 위해 약 1~3개월이 소요됩니다. (조건에 따라 변동)</p>
+    <h2 class="section-title" data-i18n="process_title">진행 프로세스</h2>
+    <p class="section-sub" data-i18n="process_sub">깊이 있는 분석을 위해 약 1~3개월이 소요됩니다. (조건에 따라 변동)</p>
 
     <div class="two">
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 1. 사전 상담 및 요구 파악</h3>
-        <p class="muted" style="margin:0">건축주 니즈 및 건물 기초 데이터 확인</p>
+        <h3 style="margin:0 0 10px" data-i18n="step1_title">Step 1. 사전 상담 및 요구 파악</h3>
+        <p class="muted" style="margin:0" data-i18n="step1_desc">건축주 니즈 및 건물 기초 데이터 확인</p>
       </div>
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 2. 현장 방문 및 정밀 조사</h3>
-        <p class="muted" style="margin:0">건축사 현장 실측 및 노후도 진단</p>
+        <h3 style="margin:0 0 10px" data-i18n="step2_title">Step 2. 현장 방문 및 정밀 조사</h3>
+        <p class="muted" style="margin:0" data-i18n="step2_desc">건축사 현장 실측 및 노후도 진단</p>
       </div>
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 3. 자료 분석 및 전략 기획</h3>
-        <p class="muted" style="margin:0">법규 검토, 성능 검토, 솔루션 도출</p>
+        <h3 style="margin:0 0 10px" data-i18n="step3_title">Step 3. 자료 분석 및 전략 기획</h3>
+        <p class="muted" style="margin:0" data-i18n="step3_desc">법규 검토, 성능 검토, 솔루션 도출</p>
       </div>
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 4. 최종 보고서 브리핑</h3>
-        <p class="muted" style="margin:0">진단 결과 및 전략 제안서(PDF) 제공</p>
+        <h3 style="margin:0 0 10px" data-i18n="step4_title">Step 4. 최종 보고서 브리핑</h3>
+        <p class="muted" style="margin:0" data-i18n="step4_desc">진단 결과 및 전략 제안서(PDF) 제공</p>
       </div>
     </div>
   </section>
 
   <section id="pricing">
-    <h2 class="section-title">비용 안내</h2>
-    <p class="section-sub">
+    <h2 class="section-title" data-i18n="pricing_title">비용 안내</h2>
+    <p class="section-sub" data-i18n-html="pricing_sub">
       프로젝트의 규모와 기술적 난이도에 따라 신청 방식이 구분됩니다.
       <br>연면적은 <b>건축물대장상 연면적</b> 기준입니다.
     </p>
 
     <div class="pricing">
       <div class="card price-hero">
-        <span class="tag">1️⃣ 온라인 간편 결제 (Standard)</span>
+        <span class="tag" data-i18n="pricing_tag_standard">1️⃣ 온라인 간편 결제 (Standard)</span>
         <div class="price-row">
-          <span>기본 착수금(필수)</span>
+          <span data-i18n="pricing_base_label">기본 착수금(필수)</span>
           <span>15,000,000원</span>
         </div>
         <div class="price-row">
-          <span>추가 비용(300㎡ 초과)</span>
+          <span data-i18n="pricing_extra_label">추가 비용(300㎡ 초과)</span>
           <span>1㎡당 20,000원</span>
         </div>
-        <p class="muted" style="margin:0">
+        <p class="muted" style="margin:0" data-i18n-html="pricing_note">
           결제 방식: 기본 착수금 + (연면적 정수화 후 300㎡ 초과분을 옵션 수량으로 입력)
           <br><span class="tiny">※ 옵션 수량 = max(0, floor(연면적) - 300)</span>
         </p>
 
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 스마트스토어에서 결제하기</a>
-          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">톡톡으로 옵션 수량 물어보기</a>
+          <a class="btn primary" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener" data-i18n="pricing_btn_pay">🛒 스마트스토어에서 결제하기</a>
+          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener" data-i18n="pricing_btn_ask">톡톡으로 옵션 수량 물어보기</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="tag">옵션 수량 자동 계산</span>
+        <span class="tag" data-i18n="calc_tag">옵션 수량 자동 계산</span>
         <div class="calc" style="margin-top:10px">
-          <label for="area">연면적(㎡) 입력</label>
+          <label for="area" data-i18n="calc_label_area">연면적(㎡) 입력</label>
           <div class="input">
-            <input id="area" type="number" inputmode="decimal" placeholder="예: 739.7" min="0" step="0.1" />
+            <input id="area" type="number" inputmode="decimal" placeholder="예: 739.7" min="0" step="0.1" data-i18n-placeholder="calc_placeholder" />
           </div>
           <div class="result" id="calcResult">
             옵션 수량: 0개
             <span class="sub">예상 총액(참고): 15,000,000원</span>
           </div>
-          <div class="tiny">
+          <div class="tiny" data-i18n="calc_note">
             ※ 1,000㎡ 이상 또는 특수용도/복합설비/도면 미보유 등 난이도 상승 시 별도 견적이 적용될 수 있습니다(톡톡 안내).
           </div>
 
-          <span class="tag" style="margin-top:10px">2️⃣ 기업/특수 프로젝트(Enterprise)</span>
+          <span class="tag" style="margin-top:10px" data-i18n="pricing_tag_enterprise">2️⃣ 기업/특수 프로젝트(Enterprise)</span>
           <div class="box" style="box-shadow:none">
-            <p class="muted" style="margin:0">
+            <p class="muted" style="margin:0" data-i18n-html="enterprise_body">
               대상: 연면적 1,000㎡ 이상 또는 특수 용도<br>
               일정 규모 이상은 설비 시스템, 에너지 검토, 구조 보강, 소방, 시공 계획, 각종 심의 등 복합 검토가 필요합니다.
               확인 후 별도 견적서를 발행해 드립니다.
@@ -612,15 +599,13 @@
   </section>
 
   <section id="examples">
-    <h2 class="section-title">자료 예시</h2>
-
-    <!-- 섹션 1줄 설명: 프리미엄/명확/전환용 -->
-    <p class="section-sub">
+    <h2 class="section-title" data-i18n="examples_title">자료 예시</h2>
+    <p class="section-sub" data-i18n-html="examples_sub">
       예시는 ‘멋’이 아니라 <b>근거</b>입니다. 전후 비교와 함께, 무엇을 먼저 고쳐야 돈이 안 새는지 보여드립니다.
     </p>
 
     <div class="two">
-      <div class="media" aria-label="영상 예시 1">
+      <div class="media" aria-label="영상 예시 1" data-i18n-aria="aria_video1">
         <iframe
           width="100%"
           height="315"
@@ -631,11 +616,10 @@
           allowfullscreen
           style="display:block; aspect-ratio:16/9; border:0; background:#000;"
         ></iframe>
-
-        <div class="cap">영상 1 | “제로에너지 2등급”은 운이 아니라, 순서와 근거의 결과입니다.</div>
+        <div class="cap" data-i18n="video1_cap">영상 1 | “제로에너지 2등급”은 운이 아니라, 순서와 근거의 결과입니다.</div>
       </div>
 
-      <div class="media" aria-label="영상 예시 2">
+      <div class="media" aria-label="영상 예시 2" data-i18n-aria="aria_video2">
         <iframe
           width="100%"
           height="315"
@@ -646,41 +630,41 @@
           allowfullscreen
           style="display:block; aspect-ratio:16/9; border:0; background:#000;"
         ></iframe>
-        <div class="cap">영상 2 | 누수·결로·단열은 한 번에 묶어서 봐야, 공사가 두 번 나지 않습니다.</div>
+        <div class="cap" data-i18n="video2_cap">영상 2 | 누수·결로·단열은 한 번에 묶어서 봐야, 공사가 두 번 나지 않습니다.</div>
       </div>
     </div>
   </section>
 
   <section id="consult">
-    <h2 class="section-title">상담 신청하기</h2>
-    <p class="section-sub">
+    <h2 class="section-title" data-i18n="consult_title">상담 신청하기</h2>
+    <p class="section-sub" data-i18n-html="consult_sub">
       “우리 건물, 300㎡ 넘는지부터 확인해 드릴까요?”<br>
       연면적만 알려주시면 옵션 수량을 계산해서 안내드립니다.
     </p>
 
     <div class="two">
       <div class="card">
-        <h3 style="margin:0 0 10px">빠른 상담</h3>
-        <p class="muted" style="margin:0 0 14px">
+        <h3 style="margin:0 0 10px" data-i18n="consult_fast_title">빠른 상담</h3>
+        <p class="muted" style="margin:0 0 14px" data-i18n="consult_fast_desc">
           연면적(㎡) + 건물 용도 + 위치(구/동)만 알려주셔도 첫 안내가 가능합니다.
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="tel:023134581">📞 02-313-4581</a>
-          <a class="btn ghost" href="mailto:grenarch@naver.com">✉ grenarch@naver.com</a>
-          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">💬 네이버 톡톡</a>
+          <a class="btn primary" href="tel:023134581" data-i18n="consult_btn_call">📞 02-313-4581</a>
+          <a class="btn ghost" href="mailto:grenarch@naver.com" data-i18n="consult_btn_email">✉ grenarch@naver.com</a>
+          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener" data-i18n="consult_btn_talk">💬 네이버 톡톡</a>
         </div>
       </div>
 
       <div class="card">
-        <h3 style="margin:0 0 10px">사전 설문 (추천)</h3>
-        <p class="muted" style="margin:0 0 14px">
+        <h3 style="margin:0 0 10px" data-i18n="survey_title">사전 설문 (추천)</h3>
+        <p class="muted" style="margin:0 0 14px" data-i18n="survey_desc">
           설문을 먼저 작성해주시면 상담이 더 빠르고 정확해집니다.
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener">
+          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener" data-i18n="survey_btn_form">
             📝 구글폼 작성하기
           </a>
-          <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+          <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener" data-i18n="survey_btn_product">
             🛒 스마트스토어 상품 보기
           </a>
         </div>
@@ -688,55 +672,502 @@
     </div>
 
     <div class="box" style="margin-top:16px">
-      <b>⚠️ 필독 유의사항</b>
+      <b data-i18n="notice_title">⚠️ 필독 유의사항</b>
       <ul class="list">
-        <li><b>상담 필수</b>: 고관여 전문 컨설팅입니다. 협의 없는 결제는 취소될 수 있습니다.</li>
-        <li><b>법적 효력</b>: 결과물은 기획/전략 제안용이며 관공서 제출용 인허가 도서가 아닙니다.</li>
-        <li><b>별도 비용</b>: 정밀안전진단, 측량, 상세 에너지 시뮬레이션 등은 포함되지 않으며 필요 시 별도 진행입니다.</li>
+        <li data-i18n="notice_li1"><b>상담 필수</b>: 고관여 전문 컨설팅입니다. 협의 없는 결제는 취소될 수 있습니다.</li>
+        <li data-i18n="notice_li2"><b>법적 효력</b>: 결과물은 기획/전략 제안용이며 관공서 제출용 인허가 도서가 아닙니다.</li>
+        <li data-i18n="notice_li3"><b>별도 비용</b>: 정밀안전진단, 측량, 상세 에너지 시뮬레이션 등은 포함되지 않으며 필요 시 별도 진행입니다.</li>
       </ul>
     </div>
   </section>
 
   <footer>
-    <div style="font-weight:900">(주)여기건축사사무소 | 대표: 뚱뚜루</div>
-    <div class="muted">문의: 02-313-4581 | grenarch@naver.com</div>
+    <div style="font-weight:900" data-i18n="footer_line1">(주)여기건축사사무소 | 대표: 뚱뚜루</div>
+    <div class="muted" data-i18n="footer_line2">문의: 02-313-4581 | grenarch@naver.com</div>
 
-    <div class="links" aria-label="뚱뚜루네 웹사이트 링크">
+    <div class="links" aria-label="뚱뚜루네 웹사이트 링크" data-i18n-aria="aria_footer_links">
       <a href="https://yugy.org" target="_blank" rel="noopener">yugy.org</a>
-      <a href="https://yugy.site" target="_blank" rel="noopener">뚱뚜루 도면소생술</a>
-      <a href="https://yugy.cloud" target="_blank" rel="noopener">뚱뚜루 온라인 모델하우스</a>
-      <a href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">뚱뚜루 스마트스토어</a>
+      <a href="https://yugy.site" target="_blank" rel="noopener" data-i18n="footer_link_site">뚱뚜루 도면소생술</a>
+      <a href="https://yugy.cloud" target="_blank" rel="noopener" data-i18n="footer_link_cloud">뚱뚜루 온라인 모델하우스</a>
+      <a href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener" data-i18n="footer_link_store">뚱뚜루 스마트스토어</a>
     </div>
 
-    <div class="tiny" style="margin-top:10px">
+    <div class="tiny" style="margin-top:10px" data-i18n="footer_copy">
       Copyright © 2025 Yeogi Architects. All rights reserved.
     </div>
   </footer>
 </div>
 
 <!-- Mobile bottom bar -->
-<div class="mobile-bar" role="navigation" aria-label="모바일 하단 메뉴">
+<div class="mobile-bar" role="navigation" aria-label="모바일 하단 메뉴" data-i18n-aria="aria_mobilebar">
   <div class="row">
-    <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 스마트스토어</a>
-    <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">📞 톡톡 상담</a>
+    <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener" data-i18n="btn_store">🛒 스마트스토어</a>
+    <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener" data-i18n="btn_mobile_consult">📞 톡톡 상담</a>
+  </div>
+  <div class="row3">
+    <button class="btn lang" type="button" data-lang="ko">한국어</button>
+    <button class="btn lang" type="button" data-lang="en">EN</button>
   </div>
 </div>
 
 <script>
-  // Cost calculator
+  // -------------------------
+  // i18n (KO/EN) for GitHub Pages static site
+  // -------------------------
+  const DEFAULT_LANG = 'ko';
+  let currentLang = DEFAULT_LANG;
+
+  const I18N = {
+    ko: {
+      meta_title: "yugy.store | 건축사 뚱뚜루 | 그린리모델링 전략기획",
+      meta_desc: "그린리모델링 현장진단 & 전략 기획 컨설팅. 수억 원이 드는 리모델링, 감으로 결정하지 마세요. 건축사 뚱뚜루가 먼저 잡아드립니다.",
+
+      aria_home: "yugy.store 홈",
+      aria_nav: "페이지 메뉴",
+      aria_lang: "언어 선택",
+      aria_points: "핵심 포인트",
+      aria_video1: "영상 예시 1",
+      aria_video2: "영상 예시 2",
+      aria_footer_links: "뚱뚜루네 웹사이트 링크",
+      aria_mobilebar: "모바일 하단 메뉴",
+
+      brand_sub: "건축사 뚱뚜루 | 그린리모델링 전략기획",
+
+      nav_why: "왜 건축사?",
+      nav_scope: "제공 범위",
+      nav_process: "프로세스",
+      nav_pricing: "비용 안내",
+      nav_examples: "예시",
+      nav_consult: "상담",
+
+      btn_store: "🛒 스마트스토어",
+      btn_consult: "📞 상담 신청",
+      btn_mobile_consult: "📞 톡톡 상담",
+
+      tag_service: "[그린리모델링] 현장진단 & 전략 기획 컨설팅",
+
+      hero_title: "수억 원이 드는 리모델링,<br><span style='color:#b03023;'>‘감’</span>으로 결정하시겠습니까?",
+      hero_lead: "그린리모델링은 단순한 집수리가 아닙니다.<br>에너지 성능을 혁신하고, 법적 리스크를 줄이고, 자산 가치를 다시 설계하는 작업입니다.",
+
+      q1_main: "“한 번 잘못 고치면, 쌩돈 내고 계~속 다시 고칩니다.”",
+      q1_sub: "순서가 틀리면, 공사가 두 번 납니다.",
+      q2_main: "“누수는 공사 끝나고 나타나고, 쌩돈이 계~속 나가기 시작합니다.”",
+      q2_sub: "착공 전, 건축사가 먼저 잡아야 돈이 안 샙니다.",
+
+      chip1: "건물 종합검진: 노후 건물 MRI & 처방전",
+      chip2: "건물 심폐소생: 철거만이 답일까요?",
+      chip3: "건물 노화 방지: 10년 더 젊어지는 처방",
+      chip4: "뚱뚜루 마스터플랜: 실패 없는 선행 기획",
+
+      btn_calc: "💰 비용 계산하기",
+      btn_send_area: "✅ 연면적 알려주기",
+
+      benefit_title: "특별 혜택",
+      benefit_body:
+        "본 기획 컨설팅 이용 후, (주)여기건축사사무소를 통해 실시설계/인허가 계약을 진행하시거나 프리미엄 컨설팅을 이용하실 경우, 스마트스토어에서 결제한 기획 컨설팅 비용 전액을 본 계약 대금에서 차감합니다." +
+        "<br><span class='tiny'>* 현금 환급이 아닌, 계약 대금 차감 방식입니다.</span>",
+
+      minute_title: "지금 딱 1분만",
+      minute_body: "“우리 건물, 300㎡ 넘는지부터 확인해 드릴까요?”<br>연면적만 주시면 옵션 수량을 계산해서 안내드립니다.",
+      minute_btn1: "톡톡으로 연면적 보내기",
+      minute_btn2: "결과물 예시 보기",
+
+      principle_title: "뚱뚜루의 원칙",
+      principle_body:
+        "시공사는 “어떻게 고칠지”에 강하고,<br>건축사는 “고쳐도 되는지, 어디까지 바꿀 수 있는지”에 강합니다.<br><br>" +
+        "그린리모델링은 둘 다 필요하지만, 순서는 건축사가 먼저 잡아야 돈이 안 샙니다.",
+
+      why_title: "왜 ‘건축사’의 컨설팅이 필요한가요?",
+      why_sub:
+        "시공사는 “어떻게 고칠지”에 강하고, 건축사는 “고쳐도 되는지, 어디까지 바꿀 수 있는지”에 강합니다.<br>" +
+        "법규·구조·에너지 성능·자산가치를 한 번에 통합적으로 봅니다.",
+
+      why_box1_title: "✅ 현장 중심 정밀 진단",
+      why_box1_li1: "누수, 결로, 균열, 단열 파괴부위를 현장에서 추적합니다.",
+      why_box1_li2: "도면이 없어도 “현재 상태”를 기준으로 판단 근거를 잡습니다.",
+
+      why_box2_title: "✅ 리스크 사전 차단",
+      why_box2_li1: "증축/대수선 가능성, 법규 적합성 등 핵심 리스크를 먼저 확인합니다.",
+      why_box2_li2: "공사 후 뒤늦게 터지는 비용 폭탄을 줄입니다.",
+
+      scope_title: "서비스 제공 범위",
+      scope_sub: "단순 보고서가 아닌, 내 건물의 “미래 전략 지침서”를 제공합니다.",
+
+      scope1_title: "1. 정밀 현장 조사 (Health Check)",
+      scope1_li1: "외피 상태, 창호, 단열재 노후도 점검",
+      scope1_li2: "누수, 결로, 균열 등 구조적 열화 요소 추적",
+      scope1_li3: "설비, 배관, 전기 설비 기본 상태 진단",
+
+      scope2_title: "2. 법규 및 구조 적합성 검토",
+      scope2_li1: "<b>증축 및 대수선 가능 여부 법적 검토 (핵심)</b>",
+      scope2_li2: "현행법 기준 적용 시 실내 면적 및 구조 변화 분석",
+      scope2_li3: "기존 구조 활용 가능성 및 배치 효율성 검토",
+
+      scope3_title: "3. 그린리모델링 최적화 전략 수립",
+      scope3_li1: "에너지 효율 개선 우선순위 제시 (단열/창호/설비 등)",
+      scope3_li2: "가성비 높은 친환경 자재 및 공법 제안",
+      scope3_li3: "성능 향상 기대 효과 시뮬레이션 개요",
+
+      scope4_title: "4. 전략 기획 보고서 제공 (Final Report)",
+      scope4_li1: "기초 현황도면 작성 (도면 미보유 시)",
+      scope4_li2: "종합 진단 요약 및 리스크 평가",
+      scope4_li3: "향후 진행 로드맵 및 예상 공정 제안",
+
+      process_title: "진행 프로세스",
+      process_sub: "깊이 있는 분석을 위해 약 1~3개월이 소요됩니다. (조건에 따라 변동)",
+
+      step1_title: "Step 1. 사전 상담 및 요구 파악",
+      step1_desc: "건축주 니즈 및 건물 기초 데이터 확인",
+      step2_title: "Step 2. 현장 방문 및 정밀 조사",
+      step2_desc: "건축사 현장 실측 및 노후도 진단",
+      step3_title: "Step 3. 자료 분석 및 전략 기획",
+      step3_desc: "법규 검토, 성능 검토, 솔루션 도출",
+      step4_title: "Step 4. 최종 보고서 브리핑",
+      step4_desc: "진단 결과 및 전략 제안서(PDF) 제공",
+
+      pricing_title: "비용 안내",
+      pricing_sub:
+        "프로젝트의 규모와 기술적 난이도에 따라 신청 방식이 구분됩니다.<br>" +
+        "연면적은 <b>건축물대장상 연면적</b> 기준입니다.",
+
+      pricing_tag_standard: "1️⃣ 온라인 간편 결제 (Standard)",
+      pricing_base_label: "기본 착수금(필수)",
+      pricing_extra_label: "추가 비용(300㎡ 초과)",
+      pricing_note:
+        "결제 방식: 기본 착수금 + (연면적 정수화 후 300㎡ 초과분을 옵션 수량으로 입력)" +
+        "<br><span class='tiny'>※ 옵션 수량 = max(0, floor(연면적) - 300)</span>",
+
+      pricing_btn_pay: "🛒 스마트스토어에서 결제하기",
+      pricing_btn_ask: "톡톡으로 옵션 수량 물어보기",
+
+      calc_tag: "옵션 수량 자동 계산",
+      calc_label_area: "연면적(㎡) 입력",
+      calc_placeholder: "예: 739.7",
+      calc_note: "※ 1,000㎡ 이상 또는 특수용도/복합설비/도면 미보유 등 난이도 상승 시 별도 견적이 적용될 수 있습니다(톡톡 안내).",
+
+      pricing_tag_enterprise: "2️⃣ 기업/특수 프로젝트(Enterprise)",
+      enterprise_body:
+        "대상: 연면적 1,000㎡ 이상 또는 특수 용도<br>" +
+        "일정 규모 이상은 설비 시스템, 에너지 검토, 구조 보강, 소방, 시공 계획, 각종 심의 등 복합 검토가 필요합니다. 확인 후 별도 견적서를 발행해 드립니다.",
+
+      examples_title: "자료 예시",
+      examples_sub: "예시는 ‘멋’이 아니라 <b>근거</b>입니다. 전후 비교와 함께, 무엇을 먼저 고쳐야 돈이 안 새는지 보여드립니다.",
+      video1_cap: "영상 1 | “제로에너지 2등급”은 운이 아니라, 순서와 근거의 결과입니다.",
+      video2_cap: "영상 2 | 누수·결로·단열은 한 번에 묶어서 봐야, 공사가 두 번 나지 않습니다.",
+
+      consult_title: "상담 신청하기",
+      consult_sub: "“우리 건물, 300㎡ 넘는지부터 확인해 드릴까요?”<br>연면적만 알려주시면 옵션 수량을 계산해서 안내드립니다.",
+
+      consult_fast_title: "빠른 상담",
+      consult_fast_desc: "연면적(㎡) + 건물 용도 + 위치(구/동)만 알려주셔도 첫 안내가 가능합니다.",
+      consult_btn_call: "📞 02-313-4581",
+      consult_btn_email: "✉ grenarch@naver.com",
+      consult_btn_talk: "💬 네이버 톡톡",
+
+      survey_title: "사전 설문 (추천)",
+      survey_desc: "설문을 먼저 작성해주시면 상담이 더 빠르고 정확해집니다.",
+      survey_btn_form: "📝 구글폼 작성하기",
+      survey_btn_product: "🛒 스마트스토어 상품 보기",
+
+      notice_title: "⚠️ 필독 유의사항",
+      notice_li1: "<b>상담 필수</b>: 고관여 전문 컨설팅입니다. 협의 없는 결제는 취소될 수 있습니다.",
+      notice_li2: "<b>법적 효력</b>: 결과물은 기획/전략 제안용이며 관공서 제출용 인허가 도서가 아닙니다.",
+      notice_li3: "<b>별도 비용</b>: 정밀안전진단, 측량, 상세 에너지 시뮬레이션 등은 포함되지 않으며 필요 시 별도 진행입니다.",
+
+      footer_line1: "(주)여기건축사사무소 | 대표: 뚱뚜루",
+      footer_line2: "문의: 02-313-4581 | grenarch@naver.com",
+      footer_link_site: "뚱뚜루 도면소생술",
+      footer_link_cloud: "뚱뚜루 온라인 모델하우스",
+      footer_link_store: "뚱뚜루 스마트스토어",
+      footer_copy: "Copyright © 2025 Yeogi Architects. All rights reserved.",
+
+      // Calculator strings
+      calc_opt_qty: "옵션 수량: {over}개",
+      calc_est_total: "예상 총액(참고): {total}",
+      calc_floor: "연면적 정수화: {floored}㎡",
+      calc_opt_ref: "옵션 수량(참고): {over}개",
+      calc_enterprise_warn: "1,000㎡ 이상은 Enterprise(별도 견적) 대상입니다."
+    },
+
+    en: {
+      meta_title: "yugy.store | Architect Ddoongddooroo | Green Remodeling Strategy",
+      meta_desc: "On-site diagnosis & strategy consulting for green remodeling (energy retrofits). Don’t decide a high-budget renovation on gut feeling. Architect Ddoongddooroo helps you start in the right order.",
+
+      aria_home: "yugy.store home",
+      aria_nav: "Page menu",
+      aria_lang: "Language selection",
+      aria_points: "Key points",
+      aria_video1: "Video example 1",
+      aria_video2: "Video example 2",
+      aria_footer_links: "Site links",
+      aria_mobilebar: "Mobile bottom menu",
+
+      brand_sub: "Architect Ddoongddooroo | Green Remodeling Strategy",
+
+      nav_why: "Why an architect?",
+      nav_scope: "Scope",
+      nav_process: "Process",
+      nav_pricing: "Pricing",
+      nav_examples: "Examples",
+      nav_consult: "Contact",
+
+      btn_store: "🛒 SmartStore",
+      btn_consult: "📞 Request a consult",
+      btn_mobile_consult: "📞 Naver Talk",
+
+      tag_service: "[Green Remodeling] On-site Diagnosis & Strategy Consulting",
+
+      hero_title: "A renovation that can cost hundreds of millions KRW,<br>will you decide by <span style='color:#b03023;'>“gut feeling”</span>?",
+      hero_lead:
+        "Green remodeling isn’t just a repair.<br>" +
+        "It’s a project to upgrade energy performance, reduce legal risk, and redesign your asset value.",
+
+      q1_main: "“Fix the wrong thing first, and you’ll pay for the same work again.”",
+      q1_sub: "When the sequence is wrong, the construction happens twice.",
+      q2_main: "“Leaks show up after the work is done and the money starts draining.”",
+      q2_sub: "Stop the ‘money leak’ before construction. That’s where an architect helps.",
+
+      chip1: "Full building checkup: MRI & prescription",
+      chip2: "Building CPR: Is demolition the only option?",
+      chip3: "Anti-aging plan: Make the building feel 10 years younger",
+      chip4: "Ddoongddooroo Masterplan: Pre-planning to avoid regret",
+
+      btn_calc: "💰 Calculate cost",
+      btn_send_area: "✅ Send your gross floor area",
+
+      benefit_title: "Special Benefit",
+      benefit_body:
+        "If you proceed with an execution design / permitting contract through Yeogi Architects (Co., Ltd.) after this strategy consulting, " +
+        "or choose a premium consulting package, the full consulting fee paid on SmartStore will be deducted from the main contract amount." +
+        "<br><span class='tiny'>* This is a contract deduction, not a cash refund.</span>",
+
+      minute_title: "Just 1 minute",
+      minute_body: "Want me to check whether your building is over 300㎡?<br>Send the gross floor area and I’ll calculate the option quantity.",
+      minute_btn1: "Send area via Naver Talk",
+      minute_btn2: "View deliverable examples",
+
+      principle_title: "My Principle",
+      principle_body:
+        "Contractors are strong at “how to build.”<br>" +
+        "Architects are strong at “what’s allowed, and how far you can change.”<br><br>" +
+        "Green remodeling needs both. But the right order starts with the architect.",
+
+      why_title: "Why do you need an architect for this?",
+      why_sub:
+        "Contractors focus on “how.” Architects focus on “what’s allowed and what’s smart.”<br>" +
+        "We integrate code, structure, energy performance, and asset value into one strategy.",
+
+      why_box1_title: "✅ On-site precision diagnosis",
+      why_box1_li1: "Track leaks, condensation, cracks, and thermal weak points on site.",
+      why_box1_li2: "Even without drawings, we establish decisions based on the current condition.",
+
+      why_box2_title: "✅ Prevent surprises upfront",
+      why_box2_li1: "Verify key risks first: additions/major renovations, code compliance, and constraints.",
+      why_box2_li2: "Reduce “late-stage cost bombs” that appear after construction.",
+
+      scope_title: "Service Scope",
+      scope_sub: "Not just a report. A strategic guideline for your building’s next chapter.",
+
+      scope1_title: "1. On-site Health Check",
+      scope1_li1: "Envelope condition, windows, insulation aging assessment",
+      scope1_li2: "Trace deterioration factors: leaks, condensation, cracks",
+      scope1_li3: "Baseline review of MEP: plumbing, electrical, equipment",
+
+      scope2_title: "2. Code & Structural Feasibility Review",
+      scope2_li1: "<b>Key: legal feasibility for additions / major renovations</b>",
+      scope2_li2: "Analyze interior area/structural impact under current regulations",
+      scope2_li3: "Evaluate reuse potential and layout efficiency of existing structure",
+
+      scope3_title: "3. Green Remodeling Optimization Strategy",
+      scope3_li1: "Prioritize energy upgrades: insulation / windows / systems",
+      scope3_li2: "Recommend cost-effective eco materials and methods",
+      scope3_li3: "Outline expected performance improvements (high-level)",
+
+      scope4_title: "4. Final Strategy Report (PDF)",
+      scope4_li1: "Basic existing-condition drawings (if none are available)",
+      scope4_li2: "Summary of findings and risk assessment",
+      scope4_li3: "Roadmap and recommended schedule",
+
+      process_title: "Process",
+      process_sub: "Typically 1–3 months depending on conditions.",
+
+      step1_title: "Step 1. Pre-call & goals",
+      step1_desc: "Confirm owner needs and baseline building data",
+      step2_title: "Step 2. Site visit & survey",
+      step2_desc: "On-site measurement and condition diagnosis",
+      step3_title: "Step 3. Analysis & strategy",
+      step3_desc: "Code review, performance review, solution planning",
+      step4_title: "Step 4. Final briefing",
+      step4_desc: "Deliver strategy report (PDF) and walkthrough",
+
+      pricing_title: "Pricing",
+      pricing_sub:
+        "Application method depends on size and technical complexity.<br>" +
+        "Gross floor area is based on the official building register.",
+
+      pricing_tag_standard: "1️⃣ Online Payment (Standard)",
+      pricing_base_label: "Base fee (required)",
+      pricing_extra_label: "Additional (over 300㎡)",
+      pricing_note:
+        "Payment = base fee + options (floor(GFA) – 300, if positive)" +
+        "<br><span class='tiny'>Options = max(0, floor(area) - 300)</span>",
+
+      pricing_btn_pay: "🛒 Pay on SmartStore",
+      pricing_btn_ask: "Ask for option quantity",
+
+      calc_tag: "Auto option calculator",
+      calc_label_area: "Enter gross floor area (㎡)",
+      calc_placeholder: "e.g., 739.7",
+      calc_note: "※ For 1,000㎡+ or special use / complex systems / no drawings, a separate quote may apply.",
+
+      pricing_tag_enterprise: "2️⃣ Enterprise / Special Projects",
+      enterprise_body:
+        "For 1,000㎡+ or special uses<br>" +
+        "Larger projects may require integrated reviews: MEP systems, energy, structural reinforcement, fire, construction planning, and approvals. We issue a separate quotation after review.",
+
+      examples_title: "Examples",
+      examples_sub: "Examples aren’t “for show.” They are <b>evidence</b>. We show what to fix first so money stops leaking.",
+      video1_cap: "Video 1 | “ZEB Grade 2” is not luck. It’s sequence and evidence.",
+      video2_cap: "Video 2 | Leaks, condensation, insulation: treat them as one system or you’ll pay twice.",
+
+      consult_title: "Contact",
+      consult_sub: "Want me to check if your building is over 300㎡?<br>Send the gross floor area and I’ll calculate the option quantity.",
+
+      consult_fast_title: "Quick contact",
+      consult_fast_desc: "Share: area (㎡) + building use + location (district/neighborhood).",
+      consult_btn_call: "📞 Call (KR): 02-313-4581",
+      consult_btn_email: "✉ Email: grenarch@naver.com",
+      consult_btn_talk: "💬 Naver Talk",
+
+      survey_title: "Pre-survey (recommended)",
+      survey_desc: "Filling the survey first makes the consult faster and more accurate.",
+      survey_btn_form: "📝 Fill Google Form",
+      survey_btn_product: "🛒 View product",
+
+      notice_title: "⚠️ Notes",
+      notice_li1: "<b>Consult required</b>: This is a high-involvement professional service. Payment without prior agreement may be canceled.",
+      notice_li2: "<b>Legal effect</b>: Deliverables are for planning/strategy and are not official permitting documents.",
+      notice_li3: "<b>Additional costs</b>: Detailed safety inspection, surveying, full energy simulation, etc. are not included.",
+
+      footer_line1: "Yeogi Architects Co., Ltd. | Principal: Ddoongddooroo",
+      footer_line2: "Contact: 02-313-4581 | grenarch@naver.com",
+      footer_link_site: "Drawing Revival Kit",
+      footer_link_cloud: "Online Model House",
+      footer_link_store: "SmartStore",
+      footer_copy: "Copyright © 2025 Yeogi Architects. All rights reserved.",
+
+      // Calculator strings
+      calc_opt_qty: "Option quantity: {over}",
+      calc_est_total: "Estimated total (reference): {total}",
+      calc_floor: "Floored area: {floored}㎡",
+      calc_opt_ref: "Option quantity (reference): {over}",
+      calc_enterprise_warn: "1,000㎡+ is handled as Enterprise (separate quotation)."
+    }
+  };
+
+  function pickInitialLang(){
+    const params = new URLSearchParams(window.location.search);
+    const qp = (params.get('lang') || '').toLowerCase();
+    if(qp === 'ko' || qp === 'en') return qp;
+
+    const saved = (localStorage.getItem('lang') || '').toLowerCase();
+    if(saved === 'ko' || saved === 'en') return saved;
+
+    const nav = (navigator.language || '').toLowerCase();
+    if(nav.startsWith('ko')) return 'ko';
+    return 'en';
+  }
+
+  function t(key, vars = {}){
+    const pack = I18N[currentLang] || I18N[DEFAULT_LANG];
+    const fallback = I18N[DEFAULT_LANG] || {};
+    let str = pack[key] ?? fallback[key] ?? key;
+
+    // simple {var} interpolation
+    str = String(str).replace(/\{(\w+)\}/g, (_, k) => (vars[k] !== undefined ? vars[k] : `{${k}}`));
+    return str;
+  }
+
+  function setMeta(){
+    document.title = t('meta_title');
+    const meta = document.getElementById('metaDesc');
+    if(meta) meta.setAttribute('content', t('meta_desc'));
+    document.documentElement.lang = currentLang;
+  }
+
+  function applyLang(lang){
+    currentLang = (lang === 'en' ? 'en' : 'ko');
+    localStorage.setItem('lang', currentLang);
+
+    // set active state
+    document.querySelectorAll('.btn.lang').forEach(b=>{
+      b.classList.toggle('active', b.dataset.lang === currentLang);
+    });
+
+    // data-i18n => textContent
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.dataset.i18n;
+      el.textContent = t(key);
+    });
+
+    // data-i18n-html => innerHTML
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const key = el.dataset.i18nHtml;
+      el.innerHTML = t(key);
+    });
+
+    // placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+      const key = el.dataset.i18nPlaceholder;
+      el.setAttribute('placeholder', t(key));
+    });
+
+    // aria-labels
+    document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+      const key = el.dataset.i18nAria;
+      el.setAttribute('aria-label', t(key));
+    });
+
+    setMeta();
+    updateCalc(); // refresh calculator text in selected language
+
+    // keep URL in sync (?lang=xx) without reload
+    try{
+      const u = new URL(window.location.href);
+      u.searchParams.set('lang', currentLang);
+      history.replaceState({}, "", u.toString());
+    }catch(e){}
+  }
+
+  // wire buttons
+  document.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.btn.lang');
+    if(!btn) return;
+    applyLang(btn.dataset.lang);
+  });
+
+  // -------------------------
+  // Cost calculator (language-aware labels)
+  // -------------------------
   const areaInput = document.getElementById('area');
   const calcResult = document.getElementById('calcResult');
 
   function formatKRW(n){
+    const num = Number(n || 0);
+    if(currentLang === 'ko'){
+      return num.toLocaleString('ko-KR') + '원';
+    }
     try{
-      return n.toLocaleString('ko-KR') + '원';
+      return new Intl.NumberFormat('en-US', { style:'currency', currency:'KRW', maximumFractionDigits:0 }).format(num);
     }catch(e){
-      return String(n) + '원';
+      return 'KRW ' + num.toLocaleString('en-US');
     }
   }
 
   function updateCalc(){
-    const raw = Number(areaInput.value || 0);
+    if(!calcResult) return;
+
+    const raw = Number(areaInput && areaInput.value || 0);
     const floored = Math.max(0, Math.floor(raw));
     const over = Math.max(0, floored - 300);
     const base = 15000000;
@@ -745,15 +1176,15 @@
 
     if (floored >= 1000){
       calcResult.innerHTML =
-        '연면적 정수화: ' + floored + '㎡<br>' +
-        '옵션 수량(참고): ' + over + '개' +
-        '<span class="sub">1,000㎡ 이상은 Enterprise(별도 견적) 대상입니다.</span>';
+        t('calc_floor', { floored }) + '<br>' +
+        t('calc_opt_ref', { over }) +
+        '<span class="sub">' + t('calc_enterprise_warn') + '</span>';
       return;
     }
 
     calcResult.innerHTML =
-      '옵션 수량: ' + over + '개' +
-      '<span class="sub">예상 총액(참고): ' + formatKRW(total) + '</span>';
+      t('calc_opt_qty', { over }) +
+      '<span class="sub">' + t('calc_est_total', { total: formatKRW(total) }) + '</span>';
   }
 
   if (areaInput){
@@ -771,6 +1202,9 @@
       el.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
+
+  // init
+  applyLang(pickInitialLang());
 </script>
 
 </body>

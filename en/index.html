@@ -4,14 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>yugy.store | Green Retrofit Strategy Consulting | Yeogi Architects</title>
-  <meta name="description" content="Architect-led green retrofit strategy consulting: code feasibility, risk register, energy upgrade roadmap, and capex logic before you spend." />
+  <title>yugy.store | Green Remodeling Strategy Consulting | Yeogi Architects</title>
+  <meta name="description" content="Architect-led green remodeling strategy consulting: on-site diagnosis, code feasibility, risk control, and an energy-upgrade roadmap before you spend." />
 
-  <!-- SEO hints -->
+  <!-- Canonical / hreflang -->
   <link rel="canonical" href="https://yugy.store/en/" />
   <link rel="alternate" hreflang="ko" href="https://yugy.store/" />
   <link rel="alternate" hreflang="en" href="https://yugy.store/en/" />
   <link rel="alternate" hreflang="x-default" href="https://yugy.store/" />
+
+  <!-- Open Graph (sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="yugy.store | Green Remodeling Strategy Consulting" />
+  <meta property="og:description" content="Architect-led green remodeling strategy: diagnosis, feasibility, risk control, and energy roadmap before construction." />
+  <meta property="og:url" content="https://yugy.store/en/" />
+  <meta property="og:site_name" content="yugy.store" />
+  <meta property="og:locale" content="en_US" />
 
   <style>
     :root{
@@ -33,7 +41,8 @@
       background:var(--bg);
       color:var(--ink);
       line-height:1.6;
-      word-break:keep-all;
+      word-break:normal;
+      overflow-wrap:anywhere;
     }
     a{color:inherit}
     .wrap{max-width:1100px;margin:0 auto;padding:24px 18px 80px}
@@ -60,6 +69,7 @@
     }
     .brand b{font-size:18px;letter-spacing:.2px}
     .brand small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
     nav{
       display:flex;flex:1;justify-content:center;gap:18px;
       font-size:14px;color:#3c4a42;
@@ -70,10 +80,12 @@
       transition:background .2s ease;
     }
     nav a:hover{background:rgba(31,122,74,.08)}
+
     .top-actions{
       display:flex;gap:10px;align-items:center;justify-content:flex-end;
       min-width:240px;flex-wrap:wrap;
     }
+
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:8px;
       padding:12px 16px;border-radius:999px;
@@ -85,6 +97,7 @@
       transition:transform .05s ease, background .2s ease, border .2s ease;
       box-shadow:0 8px 20px rgba(0,0,0,.05);
       white-space:nowrap;
+      appearance:none;
     }
     .btn:active{transform:translateY(1px)}
     .btn.primary{
@@ -95,6 +108,21 @@
     }
     .btn.primary:hover{background:#18663e}
     .btn.ghost:hover{border-color:#d6d2c3;background:#fffdf6}
+
+    /* Language toggle (static) */
+    .lang-group{display:flex;gap:8px;align-items:center}
+    .btn.lang{
+      padding:10px 12px;
+      font-weight:900;
+      box-shadow:none;
+      border-color:#e3dfd0;
+      background:#fff;
+    }
+    .btn.lang.active{
+      border-color:rgba(31,122,74,.35);
+      background:rgba(31,122,74,.08);
+      color:var(--green);
+    }
 
     .grid{
       display:grid;grid-template-columns: 1.2fr .9fr;
@@ -299,9 +327,13 @@
       max-width:1100px;margin:0 auto;
       display:grid;grid-template-columns:1fr 1fr;gap:10px;
     }
+    .mobile-bar .row3{
+      max-width:1100px;margin:8px auto 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
     @media (max-width: 880px){
       .mobile-bar{display:block}
-      .wrap{padding-bottom:130px}
+      .wrap{padding-bottom:160px}
     }
   </style>
 </head>
@@ -313,12 +345,12 @@
       <span class="logo" aria-hidden="true"></span>
       <div>
         <b>yugy.store</b>
-        <small>Architect-led Green Retrofit Strategy</small>
+        <small>Architect Ddoongddooroo | Green Remodeling Strategy</small>
       </div>
     </a>
 
     <nav aria-label="page menu">
-      <a href="#why">Why</a>
+      <a href="#why">Why an architect?</a>
       <a href="#scope">Scope</a>
       <a href="#process">Process</a>
       <a href="#pricing">Pricing</a>
@@ -327,12 +359,17 @@
     </nav>
 
     <div class="top-actions">
-      <a class="btn ghost" href="/">한국어</a>
+      <div class="lang-group" aria-label="Language">
+        <a class="btn lang" href="https://yugy.store/?lang=ko">한국어</a>
+        <span class="btn lang active" aria-current="page">EN</span>
+      </div>
 
-      <!-- EN CTA set (replace links) -->
-      <a class="btn ghost" href="mailto:grenarch@naver.com">✉ Email</a>
-      <a class="btn ghost" href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener">💬 WhatsApp</a>
-      <a class="btn primary" href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener">📅 Book a Call</a>
+      <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+        🛒 SmartStore
+      </a>
+      <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">
+        📞 Request a consult
+      </a>
     </div>
   </div>
 </header>
@@ -341,35 +378,40 @@
 
   <div class="grid">
     <div class="card">
-      <span class="tag">Green Retrofit Strategy Consulting</span>
+      <span class="tag">[Green Remodeling] On-site Diagnosis & Strategy Consulting</span>
 
-      <h1>De-risk your retrofit<br>before you spend the capex.</h1>
+      <h1>
+        A renovation that can cost<br>
+        hundreds of millions KRW,<br>
+        will you decide by <span style="color:#b03023;">“gut feeling”</span>?
+      </h1>
+
       <p class="lead">
-        We help owners and developers convert aging buildings into energy-efficient, code-feasible assets,
-        with a clear scope, sequencing logic, and risk register.
+        Green remodeling isn’t just a repair.<br>
+        It’s a project to upgrade energy performance, reduce legal risk, and redesign your asset value.
       </p>
 
       <div class="quotes">
         <div class="quote">
-          “Fix the wrong thing first, and you pay twice.”
-          <small>Sequence errors create rework and schedule drift.</small>
+          “Fix the wrong thing first, and you’ll pay for the same work again.”
+          <small>When the sequence is wrong, the construction happens twice.</small>
         </div>
         <div class="quote">
-          “Leaks appear after handover, then the cash starts draining.”
-          <small>Stop the money leak before construction begins.</small>
+          “Leaks show up after the work is done and the money starts draining.”
+          <small>Stop the ‘money leak’ before construction. That’s where an architect helps.</small>
         </div>
       </div>
 
       <div class="chips" aria-label="key points">
-        <div class="chip"><span class="dot"></span> Retrofit due diligence: constraints + opportunities</div>
-        <div class="chip"><span class="dot"></span> Code & feasibility path: what’s allowed, how far</div>
-        <div class="chip"><span class="dot"></span> Energy upgrade roadmap: high-impact first</div>
-        <div class="chip"><span class="dot"></span> Capex logic: scope, order, and risk controls</div>
+        <div class="chip"><span class="dot"></span> Full building checkup: MRI & prescription</div>
+        <div class="chip"><span class="dot"></span> Code & feasibility: what’s allowed, how far you can change</div>
+        <div class="chip"><span class="dot"></span> Energy-upgrade roadmap: high-impact first</div>
+        <div class="chip"><span class="dot"></span> Ddoongddooroo Masterplan: pre-planning to avoid regret</div>
       </div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-        <a class="btn primary" href="#pricing">💰 Estimate pricing</a>
-        <a class="btn ghost" href="#contact">✅ Send GFA (㎡)</a>
+        <a class="btn primary" href="#pricing">💰 Calculate cost</a>
+        <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">✅ Send your GFA (㎡)</a>
       </div>
     </div>
 
@@ -378,11 +420,12 @@
         <div class="kicker">
           <div class="badge">💎</div>
           <div>
-            <h3>Commercial Logic</h3>
+            <h3>Special Benefit</h3>
             <p class="muted" style="margin:0">
-              We focus on feasibility and sequencing to reduce the “unknown unknowns” that cause cost overruns.
-              For larger projects, we can issue a proposal / invoice and align with your procurement process.
-              <br><span class="tiny">* Deliverables are strategic planning outputs, not stamped permit documents.</span>
+              If you proceed with an execution design / permitting contract through Yeogi Architects (Co., Ltd.)
+              after this strategy consulting, or choose a premium consulting package, the full consulting fee paid
+              on SmartStore will be deducted from the main contract amount.
+              <br><span class="tiny">* This is a contract deduction, not a cash refund.</span>
             </p>
           </div>
         </div>
@@ -392,13 +435,14 @@
         <div class="kicker">
           <div class="badge">⏱</div>
           <div style="width:100%">
-            <h3>Fast pre-check (1 minute)</h3>
+            <h3>Just 1 minute</h3>
             <p class="muted" style="margin:0 0 12px">
-              Send your gross floor area (㎡) and building use. We will confirm the pricing tier and next steps.
+              Want me to check whether your building is over 300㎡?<br>
+              Send the gross floor area and I’ll calculate the option quantity.
             </p>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn primary" href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener">Book a Call</a>
-              <a class="btn ghost" href="#examples">View examples</a>
+              <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">Send area via Naver Talk</a>
+              <a class="btn ghost" href="#examples">View deliverable examples</a>
             </div>
           </div>
         </div>
@@ -408,10 +452,10 @@
         <div class="kicker">
           <div class="badge">📌</div>
           <div>
-            <h3>Principle</h3>
+            <h3>My Principle</h3>
             <p class="muted" style="margin:0">
-              Contractors are strong at “how to build.” Architects are strong at “what’s allowed and what’s feasible.”
-              A successful retrofit needs both, but risk control starts with feasibility and sequence.
+              Contractors are strong at “how to build.” Architects are strong at “what’s allowed, and how far you can change.”
+              Green remodeling needs both, but the right order starts with feasibility and sequence.
             </p>
           </div>
         </div>
@@ -420,69 +464,69 @@
   </div>
 
   <section id="why">
-    <h2 class="section-title">Why an architect-led strategy?</h2>
+    <h2 class="section-title">Why do you need an architect for this?</h2>
     <p class="section-sub">
-      Retrofits fail when feasibility, constraints, and sequence are not defined upfront.
-      We integrate code, structure, building physics, and asset logic into one plan.
+      Contractors focus on “how.” Architects focus on “what’s allowed and what’s smart.”<br>
+      We integrate code, structure, energy performance, and asset logic into one strategy.
     </p>
 
     <div class="two">
       <div class="box">
-        <div class="callout">✅ On-site diagnosis</div>
+        <div class="callout">✅ On-site precision diagnosis</div>
         <ul class="list">
-          <li>Trace leaks, condensation, cracks, and thermal weak points.</li>
-          <li>Establish decision rationale even when drawings are missing.</li>
+          <li>Track leaks, condensation, cracks, and thermal weak points on site.</li>
+          <li>Even without drawings, we establish decisions based on the current condition.</li>
         </ul>
       </div>
 
       <div class="box">
-        <div class="callout">✅ Risk register before construction</div>
+        <div class="callout">✅ Prevent surprises upfront</div>
         <ul class="list">
-          <li>Validate legal feasibility (additions/major renovation), constraints, and critical risks.</li>
-          <li>Reduce late-stage cost spikes caused by rework or non-compliance.</li>
+          <li>Verify key risks first: additions/major renovations, code compliance, and constraints.</li>
+          <li>Reduce “late-stage cost bombs” that appear after construction.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="scope">
-    <h2 class="section-title">Scope of service</h2>
-    <p class="section-sub">Not a generic report. A strategic playbook for retrofit execution.</p>
+    <h2 class="section-title">Service Scope</h2>
+    <p class="section-sub">Not just a report. A strategic guideline for your building’s next chapter.</p>
 
     <div class="two">
       <div class="box">
-        <h3 style="margin:0 0 10px">1) On-site Health Check</h3>
+        <h3 style="margin:0 0 10px">1. On-site Health Check</h3>
         <ul class="list">
-          <li>Envelope condition, windows, insulation aging</li>
-          <li>Deterioration tracing: leaks, condensation, cracks</li>
-          <li>Baseline review: plumbing/electrical/systems</li>
+          <li>Envelope condition, windows, insulation aging assessment</li>
+          <li>Trace deterioration factors: leaks, condensation, cracks</li>
+          <li>Baseline review of MEP: plumbing, electrical, equipment</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3 style="margin:0 0 10px">2) Code & Feasibility Review</h3>
+        <h3 style="margin:0 0 10px">2. Code & Structural Feasibility Review</h3>
         <ul class="list">
           <li><b>Key: legal feasibility for additions / major renovations</b></li>
-          <li>Impact analysis under current regulations</li>
-          <li>Reuse potential and layout efficiency review</li>
+          <li>Analyze impacts under current regulations</li>
+          <li>Evaluate reuse potential and layout efficiency</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3 style="margin:0 0 10px">3) Retrofit Optimization Strategy</h3>
+        <h3 style="margin:0 0 10px">3. Green Remodeling Optimization Strategy</h3>
         <ul class="list">
-          <li>Prioritized upgrade roadmap (high ROI first)</li>
-          <li>Material/method recommendations for performance & cost</li>
-          <li>High-level performance improvement outline</li>
+          <li>Prioritize energy upgrades: insulation / windows / systems</li>
+          <li>Recommend cost-effective eco materials and methods</li>
+          <li>Outline expected performance improvements (high-level)</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3 style="margin:0 0 10px">4) Final Strategy Report (PDF)</h3>
+        <h3 style="margin:0 0 10px">4. Final Strategy Report (PDF)</h3>
         <ul class="list">
-          <li>Existing-condition base drawings (if absent)</li>
-          <li>Findings summary + risk register</li>
-          <li>Roadmap + recommended schedule and next actions</li>
+          <li>Basic existing-condition drawings (if none are available)</li>
+          <li>Summary of findings and risk assessment</li>
+          <li>Roadmap and recommended schedule</li>
         </ul>
       </div>
     </div>
@@ -490,24 +534,24 @@
 
   <section id="process">
     <h2 class="section-title">Process</h2>
-    <p class="section-sub">Typically 1–3 months depending on access, data, and complexity.</p>
+    <p class="section-sub">Typically 1–3 months depending on conditions.</p>
 
     <div class="two">
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 1) Pre-call & goals</h3>
-        <p class="muted" style="margin:0">Confirm owner objectives and baseline data</p>
+        <h3 style="margin:0 0 10px">Step 1. Pre-call & goals</h3>
+        <p class="muted" style="margin:0">Confirm owner needs and baseline building data</p>
       </div>
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 2) Site visit & survey</h3>
-        <p class="muted" style="margin:0">Measurement + condition diagnosis</p>
+        <h3 style="margin:0 0 10px">Step 2. Site visit & survey</h3>
+        <p class="muted" style="margin:0">On-site measurement and condition diagnosis</p>
       </div>
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 3) Analysis & strategy</h3>
-        <p class="muted" style="margin:0">Feasibility + performance + sequencing plan</p>
+        <h3 style="margin:0 0 10px">Step 3. Analysis & strategy</h3>
+        <p class="muted" style="margin:0">Code review, performance review, solution planning</p>
       </div>
       <div class="box">
-        <h3 style="margin:0 0 10px">Step 4) Final briefing</h3>
-        <p class="muted" style="margin:0">PDF report + walkthrough + next-step alignment</p>
+        <h3 style="margin:0 0 10px">Step 4. Final briefing</h3>
+        <p class="muted" style="margin:0">Deliver strategy report (PDF) and walkthrough</p>
       </div>
     </div>
   </section>
@@ -515,12 +559,13 @@
   <section id="pricing">
     <h2 class="section-title">Pricing</h2>
     <p class="section-sub">
-      Pricing is based on complexity and gross floor area (㎡), per official building register.
+      Application method depends on size and technical complexity.<br>
+      Gross floor area (㎡) is based on the official building register.
     </p>
 
     <div class="pricing">
       <div class="card price-hero">
-        <span class="tag">Standard</span>
+        <span class="tag">1️⃣ Online Payment (Standard)</span>
         <div class="price-row">
           <span>Base fee (required)</span>
           <span>KRW 15,000,000</span>
@@ -530,20 +575,20 @@
           <span>KRW 20,000 / ㎡</span>
         </div>
         <p class="muted" style="margin:0">
-          Option quantity = max(0, floor(GFA) - 300)
-          <br><span class="tiny">* 1,000㎡+ or special-use projects are quoted separately (Enterprise).</span>
+          Payment = base fee + options (floor(GFA) – 300, if positive)
+          <br><span class="tiny">Options = max(0, floor(area) - 300)</span>
         </p>
 
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener">📅 Book a Call</a>
-          <a class="btn ghost" href="mailto:grenarch@naver.com">✉ Request Proposal</a>
+          <a class="btn primary" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 Pay on SmartStore</a>
+          <a class="btn ghost" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">Ask option quantity</a>
         </div>
       </div>
 
       <div class="card">
-        <span class="tag">Option calculator</span>
+        <span class="tag">Auto option calculator</span>
         <div class="calc" style="margin-top:10px">
-          <label for="area">Enter GFA (㎡)</label>
+          <label for="area">Enter gross floor area (㎡)</label>
           <div class="input">
             <input id="area" type="number" inputmode="decimal" placeholder="e.g., 739.7" min="0" step="0.1" />
           </div>
@@ -554,15 +599,15 @@
           </div>
 
           <div class="tiny">
-            * For 1,000㎡+ / complex MEP / missing drawings, a separate quotation may apply.
+            ※ For 1,000㎡+ or special use / complex systems / no drawings, a separate quote may apply.
           </div>
 
-          <span class="tag" style="margin-top:10px">Enterprise</span>
+          <span class="tag" style="margin-top:10px">2️⃣ Enterprise / Special Projects</span>
           <div class="box" style="box-shadow:none">
             <p class="muted" style="margin:0">
-              For 1,000㎡+ or special uses, multi-disciplinary reviews may be required
-              (energy, structural reinforcement, fire, approvals, construction planning).
-              We issue a tailored proposal after review.
+              For 1,000㎡+ or special uses, integrated reviews may be required:
+              MEP systems, energy, structural reinforcement, fire, construction planning, and approvals.
+              We issue a separate quotation after review.
             </p>
           </div>
         </div>
@@ -573,7 +618,7 @@
   <section id="examples">
     <h2 class="section-title">Examples</h2>
     <p class="section-sub">
-      Examples are evidence, not decoration. We show sequencing logic and risk control in retrofit outcomes.
+      Examples aren’t “for show.” They are <b>evidence</b>. We show what to fix first so money stops leaking.
     </p>
 
     <div class="two">
@@ -582,7 +627,7 @@
           width="100%"
           height="315"
           src="https://www.youtube-nocookie.com/embed/ssahtH_k2Vc?rel=0&modestbranding=1&playsinline=1"
-          title="Green retrofit example (ZEB)"
+          title="Green remodeling example (ZEB)"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -596,7 +641,7 @@
           width="100%"
           height="315"
           src="https://www.youtube-nocookie.com/embed/SLiBcJw9pOc?rel=0&modestbranding=1&playsinline=1"
-          title="Green retrofit example"
+          title="Green remodeling example"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
@@ -610,30 +655,35 @@
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <p class="section-sub">
-      Send: GFA (㎡) + building use + location + drawings availability. We respond with next steps.
+      Send: GFA (㎡) + building use + location + drawings availability.<br>
+      We respond with next steps.
     </p>
 
     <div class="two">
       <div class="card">
         <h3 style="margin:0 0 10px">Quick contact</h3>
         <p class="muted" style="margin:0 0 14px">
-          Email is best for proposals and attachments.
+          Naver Talk is fastest for a quick pre-check (option quantity & next steps).
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="mailto:grenarch@naver.com">✉ Email</a>
-          <a class="btn ghost" href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="btn ghost" href="tel:+8223134581">📞 Call (KR)</a>
+          <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">💬 Naver Talk</a>
+          <a class="btn ghost" href="mailto:grenarch@naver.com">✉ grenarch@naver.com</a>
+          <a class="btn ghost" href="tel:+8223134581">📞 +82-2-313-4581</a>
         </div>
       </div>
 
       <div class="card">
-        <h3 style="margin:0 0 10px">Book a call</h3>
+        <h3 style="margin:0 0 10px">Pre-survey (recommended)</h3>
         <p class="muted" style="margin:0 0 14px">
-          For developers/investors: schedule a 15–30 min discovery call.
+          Filling the survey first makes the consult faster and more accurate.
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener">📅 Calendly</a>
-          <a class="btn ghost" href="#pricing">💰 Pricing</a>
+          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScualMji2W6lHY4wAGZxLjnwmX_TdX8hoj9xxYKrd91uKI2IA/viewform?usp=header" target="_blank" rel="noopener">
+            📝 Fill Google Form
+          </a>
+          <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">
+            🛒 View product
+          </a>
         </div>
       </div>
     </div>
@@ -641,22 +691,22 @@
     <div class="box" style="margin-top:16px">
       <b>⚠️ Notes</b>
       <ul class="list">
-        <li><b>Consult required</b>: This is a professional, high-involvement service.</li>
+        <li><b>Consult required</b>: This is a high-involvement professional service. Payment without prior agreement may be canceled.</li>
         <li><b>Legal effect</b>: Deliverables are for planning/strategy and are not official permitting documents.</li>
-        <li><b>Additional scope</b>: Detailed inspections/surveys/full energy simulations may be separate.</li>
+        <li><b>Additional costs</b>: Detailed safety inspection, surveying, full energy simulation, etc. are not included.</li>
       </ul>
     </div>
   </section>
 
   <footer>
     <div style="font-weight:900">Yeogi Architects Co., Ltd. | Principal: Ddoongddooroo</div>
-    <div class="muted">Email: grenarch@naver.com | Tel(KR): +82-2-313-4581</div>
+    <div class="muted">Contact: +82-2-313-4581 | grenarch@naver.com</div>
 
     <div class="links" aria-label="site links">
       <a href="https://yugy.org" target="_blank" rel="noopener">yugy.org</a>
       <a href="https://yugy.site" target="_blank" rel="noopener">Drawing Revival Kit</a>
       <a href="https://yugy.cloud" target="_blank" rel="noopener">Online Model House</a>
-      <a href="https://yugy.store" target="_blank" rel="noopener">Korean Page</a>
+      <a href="https://yugy.store/?lang=ko" target="_blank" rel="noopener">Korean page</a>
     </div>
 
     <div class="tiny" style="margin-top:10px">
@@ -668,8 +718,12 @@
 <!-- Mobile bottom bar -->
 <div class="mobile-bar" role="navigation" aria-label="mobile bottom menu">
   <div class="row">
-    <a class="btn ghost" href="mailto:grenarch@naver.com">✉ Email</a>
-    <a class="btn primary" href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener">📅 Book</a>
+    <a class="btn ghost" href="https://smartstore.naver.com/kiendeod_susutto/products/12728705402" target="_blank" rel="noopener">🛒 SmartStore</a>
+    <a class="btn primary" href="https://talk.naver.com/W4HB1I" target="_blank" rel="noopener">📞 Naver Talk</a>
+  </div>
+  <div class="row3">
+    <a class="btn lang" href="https://yugy.store/?lang=ko">한국어</a>
+    <span class="btn lang active" aria-current="page">EN</span>
   </div>
 </div>
 
@@ -680,10 +734,16 @@
 
   function formatKRW(n){
     const num = Number(n || 0);
-    return 'KRW ' + num.toLocaleString('en-US');
+    try{
+      return new Intl.NumberFormat('en-US', { style:'currency', currency:'KRW', maximumFractionDigits:0 }).format(num);
+    }catch(e){
+      return 'KRW ' + num.toLocaleString('en-US');
+    }
   }
 
   function updateCalc(){
+    if(!areaInput || !calcResult) return;
+
     const raw = Number(areaInput.value || 0);
     const floored = Math.max(0, Math.floor(raw));
     const over = Math.max(0, floored - 300);
@@ -695,7 +755,7 @@
       calcResult.innerHTML =
         'Floored area: ' + floored + '㎡<br>' +
         'Option quantity (reference): ' + over +
-        '<span class="sub">1,000㎡+ is quoted separately (Enterprise).</span>';
+        '<span class="sub">1,000㎡+ is handled as Enterprise (separate quotation).</span>';
       return;
     }
 
@@ -707,6 +767,7 @@
   if (areaInput){
     areaInput.addEventListener('input', updateCalc);
   }
+  updateCalc();
 
   // Smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{

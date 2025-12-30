@@ -8,13 +8,11 @@
   <meta name="description" content="건축사가 먼저 잡아주는 그린리모델링 전략기획: 인허가/법규 가능성, 리스크 레지스터, 에너지 업그레이드 로드맵, 공사비(캡엑스) 순서 논리까지. 감으로 공사하지 마세요." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://yugy.store/" />
   <link rel="alternate" hreflang="ko" href="https://yugy.store/" />
   <link rel="alternate" hreflang="en" href="https://yugy.store/en/" />
   <link rel="alternate" hreflang="x-default" href="https://yugy.store/" />
 
-  <!-- Open Graph (공유 미리보기용, 이미지 있으면 og:image 추가 추천) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="yugy.store | 그린리모델링 전략기획 컨설팅" />
   <meta property="og:description" content="인허가/리스크/에너지/공사비 순서까지 한 장의 전략으로 정리합니다. 감으로 공사하지 마세요." />
@@ -307,7 +305,6 @@
       .wrap{padding-bottom:130px}
     }
 
-    /* English suggestion banner (optional) */
     .lang-toast{
       position:fixed; right:14px; bottom:86px;
       background:#fff;
@@ -346,9 +343,12 @@
 
     <div class="top-actions">
       <a class="btn ghost" href="/en/">EN</a>
-      <!-- 필요 링크로 교체 -->
       <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 이메일</a>
-      <a class="btn primary" href="#contact">📌 상담 요청</a>
+
+      <!-- ✅ 핵심 수정: 상담 버튼을 네이버톡톡으로 "확실히" 이동 -->
+      <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">
+        💬 상담 요청
+      </a>
     </div>
   </div>
 </header>
@@ -386,6 +386,7 @@
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
         <a class="btn primary" href="#pricing">💰 가격 계산</a>
+        <!-- 문의 섹션은 여전히 페이지 안에서 스크롤 -->
         <a class="btn ghost" href="#contact">✅ 연면적(㎡) 보내기</a>
       </div>
     </div>
@@ -414,7 +415,8 @@
               연면적(㎡)과 용도를 보내주시면 가격 구간과 다음 단계를 안내드립니다.
             </p>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn primary" href="#contact">상담 요청</a>
+              <!-- ✅ 톡톡으로 -->
+              <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">상담 요청</a>
               <a class="btn ghost" href="#examples">예시 보기</a>
             </div>
           </div>
@@ -550,7 +552,7 @@
         </p>
 
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="#contact">📌 상담 요청</a>
+          <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">💬 톡톡 상담</a>
           <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 제안서 요청</a>
         </div>
       </div>
@@ -630,19 +632,25 @@
           파일/도면 첨부가 있으면 이메일이 가장 좋습니다.
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="mailto:grenarch@naver.com">✉ 이메일</a>
+          <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 이메일</a>
           <a class="btn ghost" href="tel:+8223134581">📞 전화</a>
+          <!-- ✅ 톡톡 버튼 추가 -->
+          <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">💬 네이버톡톡</a>
+        </div>
+
+        <div class="tiny" style="margin-top:10px">
+          * 톡톡이 “빙글빙글”만 돌면: PC에선 #nafullscreen 없이 열리도록 자동 처리됩니다.
         </div>
       </div>
 
       <div class="card">
-        <h3 style="margin:0 0 10px">영문 페이지</h3>
+        <h3 style="margin:0 0 10px">스마트스토어</h3>
         <p class="muted" style="margin:0 0 14px">
-          해외 파트너/투자자 공유용 링크가 필요하시면 EN 페이지를 사용하세요.
+          결제/상품 안내가 필요하면 스마트스토어에서 확인하실 수 있어요.
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="/en/">EN 페이지 열기</a>
-          <a class="btn ghost" href="#pricing">💰 가격</a>
+          <a class="btn primary" href="https://smartstore.naver.com/kiendeod_susutto" target="_blank" rel="noopener noreferrer">🛒 스마트스토어 열기</a>
+          <a class="btn ghost" href="/en/">EN 페이지</a>
         </div>
       </div>
     </div>
@@ -665,6 +673,7 @@
       <a href="https://yugy.org" target="_blank" rel="noopener">yugy.org</a>
       <a href="https://yugy.site" target="_blank" rel="noopener">도면 소생술</a>
       <a href="https://yugy.cloud" target="_blank" rel="noopener">온라인 모델하우스</a>
+      <a href="https://smartstore.naver.com/kiendeod_susutto" target="_blank" rel="noopener noreferrer">스마트스토어</a>
       <a href="https://yugy.store/en/" target="_blank" rel="noopener">English</a>
     </div>
 
@@ -678,11 +687,12 @@
 <div class="mobile-bar" role="navigation" aria-label="mobile bottom menu">
   <div class="row">
     <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 이메일</a>
-    <a class="btn primary" href="#contact">📌 상담</a>
+    <!-- ✅ 모바일에서도 톡톡 -->
+    <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">💬 톡톡 상담</a>
   </div>
 </div>
 
-<!-- Optional: English suggestion toast (자동 리다이렉트 대신 '안내'만) -->
+<!-- Optional: English suggestion toast -->
 <div class="lang-toast" id="langToast" aria-live="polite">
   <b>English page available</b>
   <div class="muted" style="font-size:13px">Would you like to view the English version?</div>
@@ -693,6 +703,21 @@
 </div>
 
 <script>
+  // ✅ 네이버 톡톡 링크: PC는 기본, 모바일은 #nafullscreen 사용 (무한로딩 방지)
+  (function(){
+    const TALK_BASE = 'https://talk.naver.com/ct/w4hb1i';
+    const TALK_MOBILE = TALK_BASE + '#nafullscreen';
+
+    const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent || '');
+    const talkUrl = isMobile ? TALK_MOBILE : TALK_BASE;
+
+    document.querySelectorAll('a[data-talk]').forEach(a=>{
+      a.setAttribute('href', talkUrl);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+  })();
+
   // 가격 계산기 (KR)
   const areaInput = document.getElementById('area');
   const calcResult = document.getElementById('calcResult');
@@ -727,7 +752,7 @@
     areaInput.addEventListener('input', updateCalc);
   }
 
-  // 내부 링크 부드러운 스크롤
+  // 내부 링크 부드러운 스크롤 (해시 링크만)
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', (e)=>{
       const id = a.getAttribute('href');

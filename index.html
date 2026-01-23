@@ -327,19 +327,22 @@
             <option value="6">6. 증축 (면적증가)</option>
             <option value="7">7. 기획설계 (규모검토)</option>
             <option value="8">8. 도면소생술 (도면화 작업)</option>
-          </select>
+            <option value="9">9. 용도변경 (표준)</option> </select>
         </div>
         <div class="form-group">
           <label>연면적 (㎡)</label>
-          <input type="number" id="areaInput" placeholder="예: 150 (300㎡ 이하는 기본비 적용)">
+          <input type="number" id="areaInput" placeholder="예: 150 (용도변경은 99㎡까지 기본)">
         </div>
-        <p style="font-size:13px; color:#888;">* 300㎡ 까지는 기본비이며, 초과 면적에 대해 단가(㎡)가 가산됩니다.<br>* 부가세(VAT) 별도 금액입니다.</p>
+        <p style="font-size:13px; color:#888;">
+          * 기본 면적(신축 300㎡ / 용도변경 99㎡ 등) 초과 시 단가가 가산됩니다.<br>
+          * 부가세(VAT) 별도 금액입니다.
+        </p>
       </div>
 
       <div>
         <div class="result-box">
           <div class="result-row">
-            <span>기본비 (300㎡ 이하)</span>
+            <span>기본비</span>
             <span id="baseFeeDisplay">- 원</span>
           </div>
           <div class="result-row">
@@ -395,16 +398,18 @@
 </div>
 
 <script>
-  // 데이터 정의 (엑셀 기준)
+  // 데이터 정의 (엑셀 기준 + 용도변경 추가)
+  // limit: 기본비가 적용되는 기준 면적 (대부분 300, 용도변경만 99)
   const feeData = {
-    "1": { name: "일반 신축", base: 30000000, unit: 100000 },
-    "2": { name: "특수 신축", base: 50000000, unit: 300000 },
-    "3": { name: "그린리모델링", base: 20000000, unit: 50000 },
-    "4": { name: "ZEB (제로에너지)", base: 50000000, unit: 150000 },
-    "5": { name: "대수선", base: 20000000, unit: 50000 },
-    "6": { name: "증축", base: 30000000, unit: 100000 },
-    "7": { name: "기획설계", base: 5000000, unit: 10000 },
-    "8": { name: "도면소생술", base: 500000, unit: 5000 }
+    "1": { name: "일반 신축", base: 30000000, unit: 100000, limit: 300 },
+    "2": { name: "특수 신축", base: 50000000, unit: 300000, limit: 300 },
+    "3": { name: "그린리모델링", base: 20000000, unit: 50000, limit: 300 },
+    "4": { name: "ZEB (제로에너지)", base: 50000000, unit: 150000, limit: 300 },
+    "5": { name: "대수선", base: 20000000, unit: 50000, limit: 300 },
+    "6": { name: "증축", base: 30000000, unit: 100000, limit: 300 },
+    "7": { name: "기획설계", base: 5000000, unit: 10000, limit: 300 },
+    "8": { name: "도면소생술", base: 500000, unit: 5000, limit: 300 },
+    "9": { name: "용도변경", base: 1000000, unit: 20000, limit: 99 } // 요청하신 9번 항목
   };
 
   const typeSelect = document.getElementById('projectType');
@@ -426,17 +431,18 @@
 
     const data = feeData[type];
     const baseFee = data.base;
+    const limitArea = data.limit;
     let addFee = 0;
 
-    // 300m2 초과분에 대해서만 단가 적용
-    if (area > 300) {
-      addFee = (area - 300) * data.unit;
+    // 기준 면적(limitArea) 초과분에 대해서만 단가 적용
+    if (area > limitArea) {
+      addFee = (area - limitArea) * data.unit;
     }
 
     const totalFee = baseFee + addFee;
 
     // 결과 업데이트 (천단위 콤마)
-    baseFeeDisplay.innerText = baseFee.toLocaleString() + " 원";
+    baseFeeDisplay.innerText = baseFee.toLocaleString() + " 원 (기준 " + limitArea + "㎡)";
     addFeeDisplay.innerText = addFee.toLocaleString() + " 원";
     totalFeeDisplay.innerText = totalFee.toLocaleString() + " 원";
   }

@@ -4,792 +4,459 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>yugy.store | 그린리모델링 전략기획 컨설팅 | 여기건축사사무소</title>
-  <meta name="description" content="건축사가 먼저 잡아주는 그린리모델링 전략기획: 인허가/법규 가능성, 리스크 레지스터, 에너지 업그레이드 로드맵, 공사비(캡엑스) 순서 논리까지. 감으로 공사하지 마세요." />
-  <meta name="robots" content="index,follow" />
+  <title>YUGY Store | 건축 서비스의 기준</title>
+  <meta name="description" content="건축사 뚱뚜루의 설계비 산정 및 그린리모델링 전략기획. 감으로 공사하지 마세요. 기준을 세워드립니다." />
 
-  <link rel="canonical" href="https://yugy.store/" />
-  <link rel="alternate" hreflang="ko" href="https://yugy.store/" />
-  <link rel="alternate" hreflang="en" href="https://yugy.store/en/" />
-  <link rel="alternate" hreflang="x-default" href="https://yugy.store/" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="yugy.store | 그린리모델링 전략기획 컨설팅" />
-  <meta property="og:description" content="인허가/리스크/에너지/공사비 순서까지 한 장의 전략으로 정리합니다. 감으로 공사하지 마세요." />
-  <meta property="og:url" content="https://yugy.store/" />
-
-  <!-- ✅ Google tag (gtag.js) - yugy.store / GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9TRFLN758"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H9TRFLN758');
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@300;400;600&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#fbfaf3;
-      --card:#ffffff;
-      --ink:#1f2a24;
-      --muted:#65716a;
-      --green:#1f7a4a;
-      --green2:#2ea463;
-      --line:#e8e5d8;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-      --radius: 18px;
-      --radius2: 22px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
-      word-break:keep-all;
-    }
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:24px 18px 80px}
-    header{
-      position:sticky;top:0;z-index:999;
-      background:rgba(251,250,243,.86);
-      backdrop-filter:saturate(140%) blur(8px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:1100px;margin:0 auto;
-      display:flex;align-items:center;gap:14px;
-      padding:14px 18px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      min-width:240px;
-      text-decoration:none;
-    }
-    .logo{
-      width:34px;height:34px;border-radius:10px;
-      background:linear-gradient(135deg,var(--green),#73d08b);
-      box-shadow:0 10px 20px rgba(31,122,74,.18);
-    }
-    .brand b{font-size:18px;letter-spacing:.2px}
-    .brand small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-    nav{
-      display:flex;flex:1;justify-content:center;gap:18px;
-      font-size:14px;color:#3c4a42;
-    }
-    nav a{
-      text-decoration:none;
-      padding:8px 10px;border-radius:999px;
-      transition:background .2s ease;
-    }
-    nav a:hover{background:rgba(31,122,74,.08)}
-    .top-actions{
-      display:flex;gap:10px;align-items:center;justify-content:flex-end;
-      min-width:240px;flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:12px 16px;border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      text-decoration:none;
-      font-weight:800;
-      cursor:pointer;
-      transition:transform .05s ease, background .2s ease, border .2s ease;
-      box-shadow:0 8px 20px rgba(0,0,0,.05);
-      white-space:nowrap;
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn.primary{
-      background:var(--green);
-      border-color:rgba(31,122,74,.2);
-      color:#fff;
-      box-shadow:0 12px 25px rgba(31,122,74,.22);
-    }
-    .btn.primary:hover{background:#18663e}
-    .btn.ghost:hover{border-color:#d6d2c3;background:#fffdf6}
-
-    .grid{
-      display:grid;grid-template-columns: 1.2fr .9fr;
-      gap:18px;margin-top:24px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius2);
-      box-shadow:var(--shadow);
-      padding:22px;
-    }
-    .tag{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:999px;
-      background:rgba(31,122,74,.08);
-      color:var(--green);
-      font-weight:900;
-      font-size:13px;
-      border:1px solid rgba(31,122,74,.18);
-    }
-    h1{
-      font-size:40px;line-height:1.15;margin:14px 0 10px;
-      letter-spacing:-.5px;
-    }
-    .lead{color:#3a463f;font-size:16px;margin:0 0 18px}
-    .quotes{display:flex;flex-direction:column;gap:10px;margin:16px 0 14px}
-    .quote{
-      background:#fff7f4;
-      border:1px solid #f0d7d1;
-      color:#5b2c22;
-      padding:12px 14px;border-radius:14px;
-      font-weight:800;
-    }
-    .quote small{display:block;font-weight:700;color:#7a4b42;margin-top:6px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 8px}
-    .chip{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 12px;border-radius:999px;
-      background:#f5f7f5;
-      border:1px solid #e3e8e4;
-      color:#2f3c35;
-      font-weight:900;
-      font-size:13px;
-    }
-    .chip .dot{
-      width:8px;height:8px;border-radius:999px;background:var(--green2);
-      box-shadow:0 0 0 3px rgba(46,164,99,.15);
+    /* [Design System: Architectural Deep Green] */
+    :root {
+      --bg: #F5F5F4; /* 웜 그레이 */
+      --surface: #FFFFFF;
+      --text-main: #1C1917;
+      --text-sub: #57534E;
+      --accent: #2F5D62; /* 뚱뚜루 시그니처 딥 그린 */
+      --accent-hover: #1e3d40;
+      --border: rgba(0, 0, 0, 0.08);
+      --shadow: 0 10px 30px -5px rgba(0,0,0,0.06);
     }
 
-    .card h3{margin:0 0 8px;font-size:18px}
-    .muted{color:var(--muted)}
-    .tiny{font-size:12px;color:var(--muted)}
-    .kicker{display:flex;align-items:flex-start;gap:10px}
-    .kicker .badge{
-      width:34px;height:34px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(31,122,74,.09);
-      border:1px solid rgba(31,122,74,.18);
-      color:var(--green);
-      font-weight:900;
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      word-break: keep-all;
     }
 
-    section{margin-top:54px}
-    .section-title{
-      text-align:center;
-      font-size:34px;
-      margin:0 0 8px;
-      letter-spacing:-.4px;
-    }
-    .section-sub{
-      text-align:center;
-      margin:0 auto 26px;
-      max-width:820px;
-      color:var(--muted);
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+    /* 레이아웃 */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
     }
 
-    .two{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
+    /* 헤더 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245, 245, 244, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
     }
 
-    .media{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-    .media .cap{
-      padding:12px 14px;
-      color:#2f3c35;
-      font-weight:900;
-      background:#fffdf6;
-      border-top:1px solid var(--line);
-      font-size:13px;
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
     }
 
-    .box{
-      background:#ffffff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:18px;
+    .brand {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .list{
-      margin:0;padding-left:18px;
-      color:#2d3a33;
-    }
-    .list li{margin:8px 0}
-    .callout{
-      background:rgba(31,122,74,.08);
-      border:1px solid rgba(31,122,74,.18);
-      border-radius:16px;
-      padding:14px 14px;
-      font-weight:900;
-      color:#214a33;
+    
+    .brand span {
+      font-size: 12px;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text-sub);
+      font-weight: 400;
+      margin-top: 2px;
     }
 
-    .pricing{
-      display:grid;
+    .menu {
+      display: flex;
+      gap: 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+    .menu a:hover { color: var(--accent); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .btn.primary:hover { background: var(--accent-hover); }
+
+    .btn.outline {
+      background: white;
+      color: var(--text-main);
+    }
+    .btn.outline:hover { border-color: var(--text-main); }
+
+    /* 히어로 섹션 */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(47, 93, 98, 0.1);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 24px;
+      color: var(--text-main);
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--text-sub);
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    /* 카드 그리드 */
+    .grid-2 {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:16px;
-      align-items:start;
-    }
-    .price-hero{
-      display:flex;flex-direction:column;gap:12px;
-    }
-    .price-row{
-      display:flex;justify-content:space-between;gap:10px;
-      padding:12px 12px;border-radius:14px;
-      background:#f7f7f3;border:1px solid var(--line);
-      font-weight:900;
-    }
-    .calc{display:grid;gap:10px;}
-    .calc label{font-weight:900}
-    .input{display:flex;gap:10px;align-items:center;}
-    input[type="number"]{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid #dcd7c8;
-      font-size:16px;
-      outline:none;
-      background:#fff;
-    }
-    input[type="number"]:focus{border-color:rgba(31,122,74,.45);box-shadow:0 0 0 4px rgba(31,122,74,.12)}
-    .result{
-      padding:14px 14px;border-radius:16px;
-      border:1px solid rgba(31,122,74,.18);
-      background:rgba(31,122,74,.06);
-      font-weight:900;
-      color:#224c35;
-    }
-    .result .sub{display:block;font-weight:800;color:#2f5a42;margin-top:6px;font-size:13px}
-
-    footer{
-      margin-top:70px;
-      padding:30px 18px;
-      border-top:1px solid var(--line);
-      color:#314038;
-      text-align:center;
-    }
-    footer .links{
-      display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
-      margin-top:12px;
-    }
-    footer .links a{
-      text-decoration:none;
-      padding:10px 12px;border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-weight:900;
-    }
-    footer .links a:hover{border-color:#d6d2c3;background:#fffdf6}
-
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-      nav{display:none}
-      .brand{min-width:unset}
-      .top-actions{min-width:unset}
-      h1{font-size:34px}
-      .two{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
+      gap: 24px;
+      margin-top: 40px;
     }
 
-    .mobile-bar{
-      position:fixed;left:0;right:0;bottom:0;
-      background:rgba(251,250,243,.92);
-      border-top:1px solid var(--line);
-      backdrop-filter:saturate(140%) blur(8px);
-      padding:10px 12px;
-      display:none;
-      z-index:1500;
-    }
-    .mobile-bar .row{
-      max-width:1100px;margin:0 auto;
-      display:grid;grid-template-columns:1fr 1fr;gap:10px;
-    }
-    @media (max-width: 880px){
-      .mobile-bar{display:block}
-      .wrap{padding-bottom:130px}
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow);
     }
 
-    .lang-toast{
-      position:fixed; right:14px; bottom:86px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      padding:12px 12px;
-      max-width:320px;
-      display:none;
-      z-index:2000;
+    .card h3 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px;
+      margin: 0 0 16px;
+      color: var(--text-main);
     }
-    .lang-toast b{display:block;margin-bottom:6px}
-    .lang-toast .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+    .list-check li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      color: var(--text-sub);
+    }
+    .list-check li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* 계산기 섹션 (핵심) */
+    .calculator-section {
+      background: white;
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 60px;
+      box-shadow: 0 20px 40px -10px rgba(47, 93, 98, 0.1);
+    }
+
+    .form-group { margin-bottom: 24px; }
+    
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    select, input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #D6D3D1;
+      border-radius: 6px;
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    select:focus, input:focus { border-color: var(--accent); }
+
+    .result-box {
+      background: #F8FAFC;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 30px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text-sub);
+    }
+
+    .result-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #CBD5E1;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .menu { display: none; }
+      .grid-2 { grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+      .calculator-section { padding: 24px; }
+    }
+
+    /* 유튜브 모달 */
+    .ytModal {
+      position: fixed; inset: 0;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(0, 0, 0, 0.8); z-index: 2000;
+    }
+    .ytModal.show { display: flex; }
+    .ytCard { width: min(800px, 90vw); background: black; aspect-ratio: 16/9; position: relative; }
+    .ytClose {
+      position: absolute; top: -40px; right: 0;
+      color: white; font-size: 30px; background: none; border: none; cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <a class="brand" href="#top" aria-label="yugy.store home">
-      <span class="logo" aria-hidden="true"></span>
-      <div>
-        <b>yugy.store</b>
-        <small>건축사 뚱뚜루 | 그린리모델링 전략기획</small>
-      </div>
+  <div class="nav-container">
+    <a href="#" class="brand">
+      YUGY STORE <span>by Here Architects</span>
     </a>
-
-    <nav aria-label="page menu">
-      <a href="#why">왜 전략이 먼저?</a>
-      <a href="#scope">서비스 범위</a>
-      <a href="#process">진행 절차</a>
-      <a href="#pricing">가격</a>
-      <a href="#examples">예시</a>
-      <a href="#contact">문의</a>
+    <nav class="menu">
+      <a href="#why">Why Strategy</a>
+      <a href="#calculator">Fee Calculator</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
     </nav>
-
-    <div class="top-actions">
-      <a class="btn ghost" href="/en/">EN</a>
-      <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 이메일</a>
-
-      <!-- ✅ 핵심 수정: 상담 버튼을 네이버톡톡으로 "확실히" 이동 -->
-      <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">
-        💬 상담 요청
-      </a>
-    </div>
+    <a href="https://talk.naver.com/ct/w4hb1i" target="_blank" class="btn primary">상담 요청 (Talk)</a>
   </div>
 </header>
 
-<div class="wrap" id="top">
+<div class="wrap">
 
-  <div class="grid">
-    <div class="card">
-      <span class="tag">그린리모델링 전략기획 컨설팅</span>
-
-      <h1>공사비 쓰기 전에<br>리스크부터 잡습니다.</h1>
-      <p class="lead">
-        낡은 건물을 “에너지 효율 자산”으로 바꾸려면,
-        무엇을 얼마만큼, 어떤 순서로, 어떤 법적 경로로 진행할지부터 정리돼야 합니다.
-        <br>감으로 시작하면, 공사가 두 번 됩니다.
-      </p>
-
-      <div class="quotes">
-        <div class="quote">
-          “잘못된 걸 먼저 고치면, 돈을 두 번 냅니다.”
-          <small>순서가 틀리면 재시공과 일정 지연이 따라옵니다.</small>
-        </div>
-        <div class="quote">
-          “하자 나오고 나서부터 돈이 새기 시작합니다.”
-          <small>시공 전에 ‘돈 새는 구멍’부터 막습니다.</small>
-        </div>
-      </div>
-
-      <div class="chips" aria-label="key points">
-        <div class="chip"><span class="dot"></span> 리모델링 실사: 제약 + 기회 정리</div>
-        <div class="chip"><span class="dot"></span> 인허가/법규 가능성: 가능한 범위와 경로</div>
-        <div class="chip"><span class="dot"></span> 에너지 업그레이드 로드맵: 효과 큰 것부터</div>
-        <div class="chip"><span class="dot"></span> 공사비 논리: 범위, 순서, 리스크 통제</div>
-      </div>
-
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-        <a class="btn primary" href="#pricing">💰 가격 계산</a>
-        <!-- 문의 섹션은 여전히 페이지 안에서 스크롤 -->
-        <a class="btn ghost" href="#contact">✅ 연면적(㎡) 보내기</a>
-      </div>
+  <section class="hero">
+    <span class="tag">그린리모델링 전략기획 & 설계</span>
+    <h1>건축은 '감'이 아니라<br>'기준'으로 하는 것입니다.</h1>
+    <p class="lead">
+      예산 초과와 일정 지연은 계획의 부재에서 옵니다.<br>
+      착공 전, 인허가 가능성과 비용 구조를 완벽하게 정리해 드립니다.
+    </p>
+    <div style="display:flex; gap:10px; justify-content:center;">
+      <a href="#calculator" class="btn primary">설계비 산정하기</a>
+      <a href="#examples" class="btn outline">프로젝트 예시 보기</a>
     </div>
-
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div class="card">
-        <div class="kicker">
-          <div class="badge">💎</div>
-          <div>
-            <h3>사업성 중심</h3>
-            <p class="muted" style="margin:0">
-              “모르는 리스크”가 공사비 폭탄이 됩니다. 가능성, 제약, 순서를 먼저 정리해
-              비용 상승과 일정 드리프트를 줄입니다.
-              <br><span class="tiny">* 산출물은 전략/기획 자료이며, 인허가용 날인 도서가 아닙니다.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="kicker">
-          <div class="badge">⏱</div>
-          <div style="width:100%">
-            <h3>1분 사전 체크</h3>
-            <p class="muted" style="margin:0 0 12px">
-              연면적(㎡)과 용도를 보내주시면 가격 구간과 다음 단계를 안내드립니다.
-            </p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <!-- ✅ 톡톡으로 -->
-              <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">상담 요청</a>
-              <a class="btn ghost" href="#examples">예시 보기</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="kicker">
-          <div class="badge">📌</div>
-          <div>
-            <h3>원칙</h3>
-            <p class="muted" style="margin:0">
-              시공은 “어떻게”가 강하고, 건축사는 “무엇이 가능한지”가 강합니다.
-              리스크 통제는 가능성과 순서에서 시작합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <section id="why">
-    <h2 class="section-title">왜 ‘건축사 전략기획’이 먼저인가요?</h2>
-    <p class="section-sub">
-      리모델링은 “공사”가 아니라 “의사결정”입니다. 가능성, 제약, 순서가 안 잡히면
-      공사비는 새고, 일정은 밀리고, 하자는 늘어납니다.
+    <div class="grid-2">
+      <div class="card">
+        <h3>01. 인허가 & 법규 검토</h3>
+        <ul class="list-check">
+          <li>증축 및 대수선 가능 범위 법적 검토</li>
+          <li>불법 건축물 양성화 가능성 진단</li>
+          <li>용도변경을 통한 수익성 극대화 전략</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>02. 에너지 & 성능 최적화</h3>
+        <ul class="list-check">
+          <li>단열, 창호, 기밀 성능 진단</li>
+          <li>정부 지원사업(그린리모델링 이자지원) 연계</li>
+          <li>결로 및 누수 원인 파악과 해결책 제시</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="calculator-section">
+    <div style="text-align:center; margin-bottom:30px;">
+      <h2 style="font-family:'Noto Serif KR'; font-size:28px; margin-bottom:10px;">설계비 산정 (Estimate)</h2>
+      <p style="color:var(--text-sub);">프로젝트 유형과 연면적을 입력하시면 예상 비용이 산출됩니다.</p>
+    </div>
+
+    <div class="grid-2" style="gap:40px;">
+      <div>
+        <div class="form-group">
+          <label>프로젝트 유형 선택</label>
+          <select id="projectType">
+            <option value="0">선택해주세요</option>
+            <option value="1">1. 일반 신축 (주택/근생)</option>
+            <option value="2">2. 특수 신축 (병원/호텔 등)</option>
+            <option value="3">3. 그린리모델링 (성능개선)</option>
+            <option value="4">4. 제로에너지건축물 (ZEB)</option>
+            <option value="5">5. 대수선 (구조변경)</option>
+            <option value="6">6. 증축 (면적증가)</option>
+            <option value="7">7. 기획설계 (규모검토)</option>
+            <option value="8">8. 도면소생술 (도면화 작업)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>연면적 (㎡)</label>
+          <input type="number" id="areaInput" placeholder="예: 150 (300㎡ 이하는 기본비 적용)">
+        </div>
+        <p style="font-size:13px; color:#888;">* 300㎡ 까지는 기본비이며, 초과 면적에 대해 단가(㎡)가 가산됩니다.<br>* 부가세(VAT) 별도 금액입니다.</p>
+      </div>
+
+      <div>
+        <div class="result-box">
+          <div class="result-row">
+            <span>기본비 (300㎡ 이하)</span>
+            <span id="baseFeeDisplay">- 원</span>
+          </div>
+          <div class="result-row">
+            <span>추가비 (초과 면적)</span>
+            <span id="addFeeDisplay">- 원</span>
+          </div>
+          <div class="result-total">
+            <span>예상 설계비</span>
+            <span id="totalFeeDisplay">0 원</span>
+          </div>
+        </div>
+        <div style="margin-top:20px; text-align:right;">
+          <a href="https://talk.naver.com/ct/w4hb1i" target="_blank" class="btn primary" style="width:100%;">이 견적으로 상담하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="examples" style="margin-top:80px;">
+    <h2 style="text-align:center; font-family:'Noto Serif KR'; margin-bottom:40px;">Projects & Process</h2>
+    <div class="grid-2">
+      <div class="card" style="padding:0; overflow:hidden; border:none;">
+        <iframe width="100%" height="300" src="https://www.youtube.com/embed/ssahtH_k2Vc?rel=0" frameborder="0" allowfullscreen></iframe>
+        <div style="padding:20px;">
+          <h4 style="margin:0 0 10px 0;">BIM 시뮬레이션</h4>
+          <p style="font-size:14px; color:var(--text-sub);">보이지 않는 비용을 찾아내는 시공 전 시뮬레이션 과정입니다.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:0; overflow:hidden; border:none;">
+        <iframe width="100%" height="300" src="https://www.youtube.com/embed/SLiBcJw9pOc?rel=0" frameborder="0" allowfullscreen></iframe>
+        <div style="padding:20px;">
+          <h4 style="margin:0 0 10px 0;">그린리모델링 사례</h4>
+          <p style="font-size:14px; color:var(--text-sub);">노후 건물의 가치를 높이는 에너지 성능 개선 프로젝트입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" style="margin-top:100px; padding-top:40px; border-top:1px solid var(--border); text-align:center;">
+    <h3 style="font-family:'Cinzel'; margin-bottom:10px;">YUGY STORE</h3>
+    <p style="color:var(--text-sub); font-size:14px;">
+      대표 건축사: 뚱뚜루 | Here Architects<br>
+      Email: grenarch@naver.com | Tel: 02-313-4581
     </p>
-
-    <div class="two">
-      <div class="box">
-        <div class="callout">✅ 현장 진단</div>
-        <ul class="list">
-          <li>누수, 결로, 균열, 열교 등 원인 추적</li>
-          <li>도면이 없어도 판단 가능한 기준과 근거 정리</li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <div class="callout">✅ 시공 전 리스크 레지스터</div>
-        <ul class="list">
-          <li>인허가/법규 가능성(증축·대수선 등)과 핵심 리스크 확인</li>
-          <li>재시공/미준수로 인한 “막판 비용 급등”을 줄입니다</li>
-        </ul>
-      </div>
+    <div style="margin-top:20px; display:flex; gap:15px; justify-content:center; font-size:13px; color:#888;">
+      <a href="https://yugy.org">Homepage</a>
+      <a href="https://smartstore.naver.com/kiendeod_susutto">SmartStore</a>
+      <a href="https://yugy.site">Drawing Service</a>
     </div>
-  </section>
-
-  <section id="scope">
-    <h2 class="section-title">서비스 범위</h2>
-    <p class="section-sub">‘예쁜 보고서’가 아니라, 실행 가능한 전략 플레이북입니다.</p>
-
-    <div class="two">
-      <div class="box">
-        <h3 style="margin:0 0 10px">1) 현장 건강검진</h3>
-        <ul class="list">
-          <li>외피 상태, 창호, 단열 노후도</li>
-          <li>누수/결로/균열 진단과 원인 추적</li>
-          <li>설비(배관/전기 등) 기본 점검</li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <h3 style="margin:0 0 10px">2) 인허가·법규 가능성 검토</h3>
-        <ul class="list">
-          <li><b>핵심: 증축/대수선 등 ‘가능한 경로’부터 확정</b></li>
-          <li>현행 규정 기준 영향 분석</li>
-          <li>재사용 가능성 및 평면 효율 검토</li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <h3 style="margin:0 0 10px">3) 최적화 전략</h3>
-        <ul class="list">
-          <li>효과 큰 순서대로 로드맵 구성</li>
-          <li>성능·비용 균형의 재료/공법 추천</li>
-          <li>성능 개선 방향(개략) 제시</li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <h3 style="margin:0 0 10px">4) 최종 전략 리포트(PDF)</h3>
-        <ul class="list">
-          <li>기존 현황 도면 정리(부재 시)</li>
-          <li>진단 요약 + 리스크 레지스터</li>
-          <li>권장 공정 순서 + 다음 액션</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="process">
-    <h2 class="section-title">진행 절차</h2>
-    <p class="section-sub">보통 1–3개월, 자료/접근성/복잡도에 따라 달라집니다.</p>
-
-    <div class="two">
-      <div class="box">
-        <h3 style="margin:0 0 10px">1) 사전 통화 & 목표 확인</h3>
-        <p class="muted" style="margin:0">목표, 제약, 기본 자료 확인</p>
-      </div>
-      <div class="box">
-        <h3 style="margin:0 0 10px">2) 현장 방문 & 실측/진단</h3>
-        <p class="muted" style="margin:0">실측 + 상태 진단</p>
-      </div>
-      <div class="box">
-        <h3 style="margin:0 0 10px">3) 분석 & 전략 수립</h3>
-        <p class="muted" style="margin:0">가능성 + 성능 + 순서 계획</p>
-      </div>
-      <div class="box">
-        <h3 style="margin:0 0 10px">4) 최종 브리핑</h3>
-        <p class="muted" style="margin:0">PDF + 설명 + 다음 단계 정렬</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing">
-    <h2 class="section-title">가격</h2>
-    <p class="section-sub">공식 건축물대장 기준 연면적(㎡)과 난이도로 산정합니다.</p>
-
-    <div class="pricing">
-      <div class="card price-hero">
-        <span class="tag">기본(표준)</span>
-        <div class="price-row">
-          <span>기본비(필수)</span>
-          <span>15,000,000원</span>
-        </div>
-        <div class="price-row">
-          <span>추가(300㎡ 초과)</span>
-          <span>20,000원 / ㎡</span>
-        </div>
-        <p class="muted" style="margin:0">
-          옵션 수량 = max(0, floor(연면적) - 300)
-          <br><span class="tiny">* 1,000㎡+ 또는 특수용도는 별도 견적(Enterprise)</span>
-        </p>
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">💬 톡톡 상담</a>
-          <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 제안서 요청</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="tag">옵션 계산기</span>
-        <div class="calc" style="margin-top:10px">
-          <label for="area">연면적 입력(㎡)</label>
-          <div class="input">
-            <input id="area" type="number" inputmode="decimal" placeholder="예: 739.7" min="0" step="0.1" />
-          </div>
-
-          <div class="result" id="calcResult">
-            옵션 수량: 0
-            <span class="sub">예상 합계(참고): 15,000,000원</span>
-          </div>
-
-          <div class="tiny">
-            * 도면 부재/구조·설비 복잡/정밀 시뮬레이션 필요 시 별도 견적이 적용될 수 있습니다.
-          </div>
-
-          <span class="tag" style="margin-top:10px">Enterprise</span>
-          <div class="box" style="box-shadow:none">
-            <p class="muted" style="margin:0">
-              1,000㎡+ 또는 특수용도는 에너지/구조/방재/인허가/시공계획 등 다분야 검토가 필요할 수 있어,
-              사전 검토 후 맞춤 제안서를 발행합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="examples">
-    <h2 class="section-title">예시</h2>
-    <p class="section-sub">예시는 “장식”이 아니라 “증거”입니다. 순서와 리스크 통제의 결과를 보여드립니다.</p>
-
-    <div class="two">
-      <div class="media" aria-label="video example 1">
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/ssahtH_k2Vc?rel=0&modestbranding=1&playsinline=1"
-          title="그린리모델링 예시 (ZEB)"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="display:block; aspect-ratio:16/9; border:0; background:#000;"
-        ></iframe>
-        <div class="cap">영상 1 | 고성능은 ‘순서’와 ‘근거’에서 나옵니다.</div>
-      </div>
-
-      <div class="media" aria-label="video example 2">
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/SLiBcJw9pOc?rel=0&modestbranding=1&playsinline=1"
-          title="그린리모델링 예시"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="display:block; aspect-ratio:16/9; border:0; background:#000;"
-        ></iframe>
-        <div class="cap">영상 2 | 누수·결로·단열은 ‘하나의 시스템’으로 봐야 재시공이 줄어듭니다.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">문의</h2>
-    <p class="section-sub">연면적(㎡) + 용도 + 위치 + 도면 유무를 보내주시면 다음 단계를 안내드립니다.</p>
-
-    <div class="two">
-      <div class="card">
-        <h3 style="margin:0 0 10px">빠른 문의</h3>
-        <p class="muted" style="margin:0 0 14px">
-          파일/도면 첨부가 있으면 이메일이 가장 좋습니다.
-        </p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 이메일</a>
-          <a class="btn ghost" href="tel:+8223134581">📞 전화</a>
-          <!-- ✅ 톡톡 버튼 추가 -->
-          <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">💬 네이버톡톡</a>
-        </div>
-
-        <div class="tiny" style="margin-top:10px">
-          * 톡톡이 “빙글빙글”만 돌면: PC에선 #nafullscreen 없이 열리도록 자동 처리됩니다.
-        </div>
-      </div>
-
-      <div class="card">
-        <h3 style="margin:0 0 10px">스마트스토어</h3>
-        <p class="muted" style="margin:0 0 14px">
-          결제/상품 안내가 필요하면 스마트스토어에서 확인하실 수 있어요.
-        </p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="https://smartstore.naver.com/kiendeod_susutto" target="_blank" rel="noopener noreferrer">🛒 스마트스토어 열기</a>
-          <a class="btn ghost" href="/en/">EN 페이지</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="box" style="margin-top:16px">
-      <b>⚠️ 안내</b>
-      <ul class="list">
-        <li><b>상담 필수</b>: 고관여 전문 서비스입니다.</li>
-        <li><b>법적 효력</b>: 산출물은 전략/기획 자료이며, 인허가용 공식 도서는 아닙니다.</li>
-        <li><b>추가 범위</b>: 정밀 조사/정밀 시뮬레이션/특수 검토는 별도일 수 있습니다.</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer>
-    <div style="font-weight:900">주식회사 여기건축사사무소 | 대표: 건축사 뚱뚜루</div>
-    <div class="muted">Email: grenarch@naver.com | Tel: +82-2-313-4581</div>
-
-    <div class="links" aria-label="site links">
-      <a href="https://yugy.org" target="_blank" rel="noopener">yugy.org</a>
-      <a href="https://yugy.site" target="_blank" rel="noopener">도면 소생술</a>
-      <a href="https://yugy.cloud" target="_blank" rel="noopener">온라인 모델하우스</a>
-      <a href="https://smartstore.naver.com/kiendeod_susutto" target="_blank" rel="noopener noreferrer">스마트스토어</a>
-      <a href="https://yugy.store/en/" target="_blank" rel="noopener">English</a>
-    </div>
-
-    <div class="tiny" style="margin-top:10px">
-      Copyright © 2025 Yeogi Architects. All rights reserved.
-    </div>
+    <p style="margin-top:40px; font-size:12px; color:#aaa;">Copyright © 2026 Here Architects. All rights reserved.</p>
   </footer>
-</div>
 
-<!-- Mobile bottom bar -->
-<div class="mobile-bar" role="navigation" aria-label="mobile bottom menu">
-  <div class="row">
-    <a class="btn ghost" href="mailto:grenarch@naver.com">✉ 이메일</a>
-    <!-- ✅ 모바일에서도 톡톡 -->
-    <a class="btn primary" data-talk href="https://talk.naver.com/ct/w4hb1i" target="_blank" rel="noopener noreferrer">💬 톡톡 상담</a>
-  </div>
-</div>
-
-<!-- Optional: English suggestion toast -->
-<div class="lang-toast" id="langToast" aria-live="polite">
-  <b>English page available</b>
-  <div class="muted" style="font-size:13px">Would you like to view the English version?</div>
-  <div class="row">
-    <a class="btn primary" href="/en/">Go to EN</a>
-    <button class="btn ghost" id="langToastClose" type="button">Not now</button>
-  </div>
 </div>
 
 <script>
-  // ✅ 네이버 톡톡 링크: PC는 기본, 모바일은 #nafullscreen 사용 (무한로딩 방지)
-  (function(){
-    const TALK_BASE = 'https://talk.naver.com/ct/w4hb1i';
-    const TALK_MOBILE = TALK_BASE + '#nafullscreen';
+  // 데이터 정의 (엑셀 기준)
+  const feeData = {
+    "1": { name: "일반 신축", base: 30000000, unit: 100000 },
+    "2": { name: "특수 신축", base: 50000000, unit: 300000 },
+    "3": { name: "그린리모델링", base: 20000000, unit: 50000 },
+    "4": { name: "ZEB (제로에너지)", base: 50000000, unit: 150000 },
+    "5": { name: "대수선", base: 20000000, unit: 50000 },
+    "6": { name: "증축", base: 30000000, unit: 100000 },
+    "7": { name: "기획설계", base: 5000000, unit: 10000 },
+    "8": { name: "도면소생술", base: 500000, unit: 5000 }
+  };
 
-    const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent || '');
-    const talkUrl = isMobile ? TALK_MOBILE : TALK_BASE;
+  const typeSelect = document.getElementById('projectType');
+  const areaInput = document.getElementById('areaInput');
+  const baseFeeDisplay = document.getElementById('baseFeeDisplay');
+  const addFeeDisplay = document.getElementById('addFeeDisplay');
+  const totalFeeDisplay = document.getElementById('totalFeeDisplay');
 
-    document.querySelectorAll('a[data-talk]').forEach(a=>{
-      a.setAttribute('href', talkUrl);
-      a.setAttribute('target', '_blank');
-      a.setAttribute('rel', 'noopener noreferrer');
-    });
-  })();
+  function calculateFee() {
+    const type = typeSelect.value;
+    const area = parseFloat(areaInput.value) || 0;
 
-  // 가격 계산기 (KR)
-  const areaInput = document.getElementById('area');
-  const calcResult = document.getElementById('calcResult');
-
-  function formatKRW(n){
-    const num = Number(n || 0);
-    return num.toLocaleString('ko-KR') + '원';
-  }
-
-  function updateCalc(){
-    const raw = Number(areaInput.value || 0);
-    const floored = Math.max(0, Math.floor(raw));
-    const over = Math.max(0, floored - 300);
-    const base = 15000000;
-    const add = over * 20000;
-    const total = base + add;
-
-    if (floored >= 1000){
-      calcResult.innerHTML =
-        '입력(버림): ' + floored + '㎡<br>' +
-        '옵션 수량(참고): ' + over +
-        '<span class="sub">1,000㎡+는 별도 견적(Enterprise)입니다.</span>';
+    if (type === "0") {
+      baseFeeDisplay.innerText = "- 원";
+      addFeeDisplay.innerText = "- 원";
+      totalFeeDisplay.innerText = "0 원";
       return;
     }
 
-    calcResult.innerHTML =
-      '옵션 수량: ' + over +
-      '<span class="sub">예상 합계(참고): ' + formatKRW(total) + '</span>';
+    const data = feeData[type];
+    const baseFee = data.base;
+    let addFee = 0;
+
+    // 300m2 초과분에 대해서만 단가 적용
+    if (area > 300) {
+      addFee = (area - 300) * data.unit;
+    }
+
+    const totalFee = baseFee + addFee;
+
+    // 결과 업데이트 (천단위 콤마)
+    baseFeeDisplay.innerText = baseFee.toLocaleString() + " 원";
+    addFeeDisplay.innerText = addFee.toLocaleString() + " 원";
+    totalFeeDisplay.innerText = totalFee.toLocaleString() + " 원";
   }
 
-  if (areaInput){
-    areaInput.addEventListener('input', updateCalc);
-  }
-
-  // 내부 링크 부드러운 스크롤 (해시 링크만)
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      const id = a.getAttribute('href');
-      if(!id || id === '#') return;
-      const el = document.querySelector(id);
-      if(!el) return;
-      e.preventDefault();
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
-
-  // 영어 안내(자동 이동은 하지 않음)
-  (function(){
-    try{
-      const toast = document.getElementById('langToast');
-      const closeBtn = document.getElementById('langToastClose');
-      const dismissed = localStorage.getItem('langToastDismissed');
-      const lang = (navigator.language || '').toLowerCase();
-
-      if (!dismissed && lang.startsWith('en') && location.pathname === '/'){
-        toast.style.display = 'block';
-      }
-      closeBtn.addEventListener('click', ()=>{
-        localStorage.setItem('langToastDismissed', '1');
-        toast.style.display = 'none';
-      });
-    }catch(e){}
-  })();
+  // 이벤트 리스너
+  typeSelect.addEventListener('change', calculateFee);
+  areaInput.addEventListener('input', calculateFee);
 </script>
 
 </body>

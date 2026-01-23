@@ -519,10 +519,10 @@
 
 
   /* =========================================
-     2. 공사 내역 분석비 계산기 로직 (NEW)
+     2. 공사 내역 분석비 계산기 로직 (수정 완료)
      ========================================= */
   const analysisData = {
-      "1": { name: "일반", base: 5000000, unit: 1000 },
+      "1": { name: "일반", base: 5000000, unit: 2000 }, // 여기서 1000 -> 2000 으로 변경했습니다!
       "2": { name: "특수", base: 10000000, unit: 5000 }
   };
 
@@ -545,7 +545,7 @@
 
       const data = analysisData[type];
       const baseFee = data.base;
-      const limitArea = 300; // 공사비 분석은 300m2 기준
+      const limitArea = 300; 
       let addFee = 0;
 
       if (area > limitArea) {

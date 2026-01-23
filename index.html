@@ -197,6 +197,23 @@
       box-shadow: 0 20px 40px -10px rgba(47, 93, 98, 0.1);
     }
 
+    .calc-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .calc-title h2 {
+        font-family: 'Noto Serif KR';
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .calc-divider {
+        margin: 50px 0;
+        border: 0;
+        border-top: 1px dashed #CBD5E1;
+    }
+
     .form-group { margin-bottom: 24px; }
     
     label {
@@ -308,9 +325,10 @@
   </section>
 
   <section id="calculator" class="calculator-section">
-    <div style="text-align:center; margin-bottom:30px;">
-      <h2 style="font-family:'Noto Serif KR'; font-size:28px; margin-bottom:10px;">설계비 산정 (Estimate)</h2>
-      <p style="color:var(--text-sub);">프로젝트 유형과 연면적을 입력하시면 예상 비용이 산출됩니다.</p>
+    
+    <div class="calc-title">
+      <h2>설계비 산정 (Design Fee)</h2>
+      <p style="color:var(--text-sub);">프로젝트 유형과 연면적을 입력하시면 예상 설계비용이 산출됩니다.</p>
     </div>
 
     <div class="grid-2" style="gap:40px;">
@@ -327,11 +345,12 @@
             <option value="6">6. 증축 (면적증가)</option>
             <option value="7">7. 기획설계 (규모검토)</option>
             <option value="8">8. 도면소생술 (도면화 작업)</option>
-            <option value="9">9. 용도변경 (표준)</option> </select>
+            <option value="9">9. 용도변경 (표준)</option>
+          </select>
         </div>
         <div class="form-group">
           <label>연면적 (㎡)</label>
-          <input type="number" id="areaInput" placeholder="예: 150 (용도변경은 99㎡까지 기본)">
+          <input type="number" id="areaInput" placeholder="예: 150 (기본 면적 이하는 기본비 적용)">
         </div>
         <p style="font-size:13px; color:#888;">
           * 기본 면적(신축 300㎡ / 용도변경 99㎡ 등) 초과 시 단가가 가산됩니다.<br>
@@ -359,6 +378,55 @@
         </div>
       </div>
     </div>
+
+    <hr class="calc-divider">
+
+    <div class="calc-title">
+        <h2>착공 공사 내역 분석 및<br>준공 내역 정산 서비스</h2>
+        <p style="color:var(--text-sub);">공사비 투명성을 위한 내역 분석 서비스 비용을 산정합니다.</p>
+    </div>
+
+    <div class="grid-2" style="gap:40px;">
+        <div>
+            <div class="form-group">
+                <label>분석 유형 선택</label>
+                <select id="analysisType">
+                    <option value="0">선택해주세요</option>
+                    <option value="1">1. 일반 (주택/근생 등)</option>
+                    <option value="2">2. 특수 (복합용도/특수시설)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>연면적 (㎡)</label>
+                <input type="number" id="analysisAreaInput" placeholder="예: 450">
+            </div>
+            <p style="font-size:13px; color:#888;">
+                * 300㎡ 이하는 기본비용이 적용됩니다.<br>
+                * 착공 시 공사 내역 적정성 검토 및 준공 정산 지원
+            </p>
+        </div>
+
+        <div>
+            <div class="result-box">
+                <div class="result-row">
+                    <span>기본비 (300㎡ 이하)</span>
+                    <span id="analysisBaseFeeDisplay">- 원</span>
+                </div>
+                <div class="result-row">
+                    <span>추가비 (초과 면적)</span>
+                    <span id="analysisAddFeeDisplay">- 원</span>
+                </div>
+                <div class="result-total">
+                    <span>예상 분석/정산비</span>
+                    <span id="analysisTotalFeeDisplay">0 원</span>
+                </div>
+            </div>
+            <div style="margin-top:20px; text-align:right;">
+                <a href="https://talk.naver.com/ct/w4hb1i" target="_blank" class="btn primary" style="width:100%;">이 견적으로 상담하기</a>
+            </div>
+        </div>
+    </div>
+
   </section>
 
   <section id="examples" style="margin-top:80px;">
@@ -398,8 +466,9 @@
 </div>
 
 <script>
-  // 데이터 정의 (엑셀 기준 + 용도변경 추가)
-  // limit: 기본비가 적용되는 기준 면적 (대부분 300, 용도변경만 99)
+  /* =========================================
+     1. 설계비 계산기 로직
+     ========================================= */
   const feeData = {
     "1": { name: "일반 신축", base: 30000000, unit: 100000, limit: 300 },
     "2": { name: "특수 신축", base: 50000000, unit: 300000, limit: 300 },
@@ -409,7 +478,7 @@
     "6": { name: "증축", base: 30000000, unit: 100000, limit: 300 },
     "7": { name: "기획설계", base: 5000000, unit: 10000, limit: 300 },
     "8": { name: "도면소생술", base: 500000, unit: 5000, limit: 300 },
-    "9": { name: "용도변경", base: 1000000, unit: 20000, limit: 99 } // 요청하신 9번 항목
+    "9": { name: "용도변경", base: 1000000, unit: 20000, limit: 99 }
   };
 
   const typeSelect = document.getElementById('projectType');
@@ -434,22 +503,65 @@
     const limitArea = data.limit;
     let addFee = 0;
 
-    // 기준 면적(limitArea) 초과분에 대해서만 단가 적용
     if (area > limitArea) {
       addFee = (area - limitArea) * data.unit;
     }
 
     const totalFee = baseFee + addFee;
 
-    // 결과 업데이트 (천단위 콤마)
     baseFeeDisplay.innerText = baseFee.toLocaleString() + " 원 (기준 " + limitArea + "㎡)";
     addFeeDisplay.innerText = addFee.toLocaleString() + " 원";
     totalFeeDisplay.innerText = totalFee.toLocaleString() + " 원";
   }
 
-  // 이벤트 리스너
   typeSelect.addEventListener('change', calculateFee);
   areaInput.addEventListener('input', calculateFee);
+
+
+  /* =========================================
+     2. 공사 내역 분석비 계산기 로직 (NEW)
+     ========================================= */
+  const analysisData = {
+      "1": { name: "일반", base: 5000000, unit: 1000 },
+      "2": { name: "특수", base: 10000000, unit: 5000 }
+  };
+
+  const analysisTypeSelect = document.getElementById('analysisType');
+  const analysisAreaInput = document.getElementById('analysisAreaInput');
+  const analysisBaseFeeDisplay = document.getElementById('analysisBaseFeeDisplay');
+  const analysisAddFeeDisplay = document.getElementById('analysisAddFeeDisplay');
+  const analysisTotalFeeDisplay = document.getElementById('analysisTotalFeeDisplay');
+
+  function calculateAnalysisFee() {
+      const type = analysisTypeSelect.value;
+      const area = parseFloat(analysisAreaInput.value) || 0;
+
+      if (type === "0") {
+          analysisBaseFeeDisplay.innerText = "- 원";
+          analysisAddFeeDisplay.innerText = "- 원";
+          analysisTotalFeeDisplay.innerText = "0 원";
+          return;
+      }
+
+      const data = analysisData[type];
+      const baseFee = data.base;
+      const limitArea = 300; // 공사비 분석은 300m2 기준
+      let addFee = 0;
+
+      if (area > limitArea) {
+          addFee = (area - limitArea) * data.unit;
+      }
+
+      const totalFee = baseFee + addFee;
+
+      analysisBaseFeeDisplay.innerText = baseFee.toLocaleString() + " 원";
+      analysisAddFeeDisplay.innerText = addFee.toLocaleString() + " 원";
+      analysisTotalFeeDisplay.innerText = totalFee.toLocaleString() + " 원";
+  }
+
+  analysisTypeSelect.addEventListener('change', calculateAnalysisFee);
+  analysisAreaInput.addEventListener('input', calculateAnalysisFee);
+
 </script>
 
 </body>

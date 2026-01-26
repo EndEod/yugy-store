@@ -37,14 +37,14 @@
 
     a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-    /* 레이아웃 */
+    /* 레이아웃 설정 */
     .wrap {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px 100px;
     }
 
-    /* 헤더 */
+    /* 헤더 디자인 */
     header {
       position: sticky;
       top: 0;
@@ -91,6 +91,7 @@
     }
     .menu a:hover { color: var(--accent); }
 
+    /* 버튼 스타일 */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -117,7 +118,7 @@
     }
     .btn.outline:hover { border-color: var(--text-main); }
 
-    /* 히어로 섹션 */
+    /* 히어로 섹션 (메인 타이틀) */
     .hero {
       padding: 80px 0 60px;
       text-align: center;
@@ -150,7 +151,7 @@
       margin: 0 auto 40px;
     }
 
-    /* 카드 그리드 */
+    /* 카드 그리드 시스템 */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -187,7 +188,7 @@
       font-weight: bold;
     }
 
-    /* 계산기 섹션 (핵심) */
+    /* 계산기 섹션 (핵심 기능) */
     .calculator-section {
       background: white;
       border: 1px solid var(--accent);
@@ -262,7 +263,7 @@
       color: var(--accent);
     }
 
-    /* 반응형 */
+    /* 모바일 반응형 */
     @media (max-width: 768px) {
       .menu { display: none; }
       .grid-2 { grid-template-columns: 1fr; }
@@ -284,7 +285,7 @@
       <a href="#process">Process</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="https://talk.naver.com/ct/w4hb1i" target="_blank" class="btn primary">상담 요청 (Talk)</a>
+    <a href="https://forms.gle/YxwKsoLc2scz3qg68" target="_blank" class="btn primary">상담 신청서 작성</a>
   </div>
 </header>
 
@@ -353,7 +354,7 @@
           <input type="number" id="areaInput" placeholder="예: 150 (기본 면적 이하는 기본비 적용)">
         </div>
         <p style="font-size:13px; color:#888;">
-          * 기본 면적(신축 300㎡ / 용도변경 99㎡ 등) 초과 시 단가가 가산됩니다.<br>
+          * 기본 면적(신축 300㎡ / 용도변경 99㎡) 초과 시 가산됩니다.<br>
           * 부가세(VAT) 별도 금액입니다.
         </p>
       </div>
@@ -374,7 +375,7 @@
           </div>
         </div>
         <div style="margin-top:20px; text-align:right;">
-          <a href="https://talk.naver.com/ct/w4hb1i" target="_blank" class="btn primary" style="width:100%;">이 견적으로 상담하기</a>
+          <a href="https://forms.gle/YxwKsoLc2scz3qg68" target="_blank" class="btn primary" style="width:100%;">이 견적으로 상담 신청하기</a>
         </div>
       </div>
     </div>
@@ -422,7 +423,7 @@
                 </div>
             </div>
             <div style="margin-top:20px; text-align:right;">
-                <a href="https://talk.naver.com/ct/w4hb1i" target="_blank" class="btn primary" style="width:100%;">이 견적으로 상담하기</a>
+                <a href="https://forms.gle/YxwKsoLc2scz3qg68" target="_blank" class="btn primary" style="width:100%;">이 견적으로 상담 신청하기</a>
             </div>
         </div>
     </div>
@@ -467,18 +468,27 @@
 
 <script>
   /* =========================================
-     1. 설계비 계산기 로직
+     1. 설계비 계산기 로직 (최종 업데이트)
      ========================================= */
   const feeData = {
-    "1": { name: "일반 신축", base: 30000000, unit: 100000, limit: 300 },
-    "2": { name: "특수 신축", base: 50000000, unit: 300000, limit: 300 },
-    "3": { name: "그린리모델링", base: 20000000, unit: 50000, limit: 300 },
-    "4": { name: "ZEB (제로에너지)", base: 50000000, unit: 150000, limit: 300 },
-    "5": { name: "대수선", base: 20000000, unit: 50000, limit: 300 },
-    "6": { name: "증축", base: 30000000, unit: 100000, limit: 300 },
-    "7": { name: "기획설계", base: 5000000, unit: 10000, limit: 300 },
+    // 1. 일반 신축: 기본 4,000만 / m2당 20만 / 기준 300
+    "1": { name: "일반 신축", base: 40000000, unit: 200000, limit: 300 },
+    // 2. 특수 신축: 기본 6,000만 / m2당 40만 / 기준 300
+    "2": { name: "특수 신축", base: 60000000, unit: 400000, limit: 300 },
+    // 3. 그린리모델링: 기본 3,000만 / m2당 20만 / 기준 300
+    "3": { name: "그린리모델링", base: 30000000, unit: 200000, limit: 300 },
+    // 4. ZEB: 기본 5,000만 / m2당 30만 / 기준 300
+    "4": { name: "ZEB (제로에너지)", base: 50000000, unit: 300000, limit: 300 },
+    // 5. 대수선: 기본 3,000만 / m2당 10만 / 기준 300
+    "5": { name: "대수선", base: 30000000, unit: 100000, limit: 300 },
+    // 6. 증축: 기본 3,000만 / m2당 20만 / 기준 300
+    "6": { name: "증축", base: 30000000, unit: 200000, limit: 300 },
+    // 7. 기획설계: 기본 500만 / m2당 2만 / 기준 300
+    "7": { name: "기획설계", base: 5000000, unit: 20000, limit: 300 },
+    // 8. 도면소생술: 기본 50만 / m2당 5천 / 기준 300
     "8": { name: "도면소생술", base: 500000, unit: 5000, limit: 300 },
-    "9": { name: "용도변경", base: 1000000, unit: 20000, limit: 99 }
+    // 9. 용도변경: 기본 500만 / m2당 10만 / **기준 99m2 (뚱뚜루 요청 반영)**
+    "9": { name: "용도변경", base: 5000000, unit: 100000, limit: 99 }
   };
 
   const typeSelect = document.getElementById('projectType');
@@ -519,11 +529,13 @@
 
 
   /* =========================================
-     2. 공사 내역 분석비 계산기 로직 (수정 완료)
+     2. 공사 내역 분석비 계산기 로직
      ========================================= */
   const analysisData = {
-      "1": { name: "일반", base: 5000000, unit: 5000 },  // 1000 -> 5000 변경
-      "2": { name: "특수", base: 10000000, unit: 10000 } // 5000 -> 10000 변경
+      // 1. 일반: 기본 500만 / m2당 2만
+      "1": { name: "일반", base: 5000000, unit: 20000 },
+      // 2. 특수: 기본 1,000만 / m2당 5만
+      "2": { name: "특수", base: 10000000, unit: 50000 }
   };
 
   const analysisTypeSelect = document.getElementById('analysisType');
@@ -545,7 +557,7 @@
 
       const data = analysisData[type];
       const baseFee = data.base;
-      const limitArea = 300; 
+      const limitArea = 300; // 분석비는 300 기준 통일
       let addFee = 0;
 
       if (area > limitArea) {

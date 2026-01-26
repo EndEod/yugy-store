@@ -12,16 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@300;400;600&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* [Design System: Architectural Deep Green] */
+    /* [디자인 시스템: 뚱뚜루의 딥 그린 & 웜 그레이] */
     :root {
-      --bg: #F5F5F4; /* 웜 그레이 */
-      --surface: #FFFFFF;
-      --text-main: #1C1917;
-      --text-sub: #57534E;
-      --accent: #2F5D62; /* 뚱뚜루 시그니처 딥 그린 */
-      --accent-hover: #1e3d40;
-      --border: rgba(0, 0, 0, 0.08);
-      --shadow: 0 10px 30px -5px rgba(0,0,0,0.06);
+      --bg: #F5F5F4; /* 배경색: 따뜻한 회색 */
+      --surface: #FFFFFF; /* 카드 배경: 흰색 */
+      --text-main: #1C1917; /* 본문 글자: 진한 회색 */
+      --text-sub: #57534E; /* 보조 글자: 연한 회색 */
+      --accent: #2F5D62; /* 포인트 컬러: 뚱뚜루 딥 그린 */
+      --accent-hover: #1e3d40; /* 버튼 올렸을 때 색상 */
+      --border: rgba(0, 0, 0, 0.08); /* 테두리 선 */
+      --shadow: 0 10px 30px -5px rgba(0,0,0,0.06); /* 그림자 효과 */
     }
 
     * { box-sizing: border-box; }
@@ -32,21 +32,21 @@
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.7;
-      word-break: keep-all;
+      word-break: keep-all; /* 단어 단위로 줄바꿈 */
     }
 
     a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-    /* 레이아웃 설정 */
+    /* 전체 레이아웃 폭 설정 */
     .wrap {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px 100px;
     }
 
-    /* 헤더 디자인 */
+    /* 헤더(메뉴바) 디자인 */
     header {
-      position: sticky;
+      position: sticky; /* 스크롤 내려도 상단 고정 */
       top: 0;
       z-index: 100;
       background: rgba(245, 245, 244, 0.95);
@@ -91,7 +91,7 @@
     }
     .menu a:hover { color: var(--accent); }
 
-    /* 버튼 스타일 */
+    /* 버튼 기본 스타일 */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -105,6 +105,7 @@
       cursor: pointer;
     }
 
+    /* 주요 버튼 (녹색) */
     .btn.primary {
       background: var(--accent);
       color: white;
@@ -112,13 +113,14 @@
     }
     .btn.primary:hover { background: var(--accent-hover); }
 
+    /* 외곽선 버튼 (흰색) */
     .btn.outline {
       background: white;
       color: var(--text-main);
     }
     .btn.outline:hover { border-color: var(--text-main); }
     
-    /* 네이버 색상 버튼 */
+    /* 네이버 스마트스토어 버튼 색상 */
     .btn.naver {
       background: #03C75A;
       color: white;
@@ -126,7 +128,7 @@
     }
     .btn.naver:hover { background: #02b351; }
 
-    /* 히어로 섹션 */
+    /* 메인 히어로 섹션 */
     .hero {
       padding: 80px 0 60px;
       text-align: center;
@@ -159,7 +161,7 @@
       margin: 0 auto 40px;
     }
 
-    /* 카드 그리드 시스템 */
+    /* 카드 그리드 시스템 (2열) */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -167,7 +169,7 @@
       margin-top: 40px;
     }
     
-    /* 쇼츠용 3분할 그리드 */
+    /* 쇼츠용 3분할 그리드 (3열) */
     .grid-3-shorts {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -190,6 +192,7 @@
       color: var(--text-main);
     }
 
+    /* 체크리스트 스타일 */
     .list-check li {
       position: relative;
       padding-left: 24px;
@@ -204,7 +207,7 @@
       font-weight: bold;
     }
 
-    /* 계산기 섹션 */
+    /* 계산기 섹션 스타일 */
     .calculator-section {
       background: white;
       border: 1px solid var(--accent);
@@ -279,7 +282,7 @@
       color: var(--accent);
     }
 
-    /* 모바일 반응형 */
+    /* 모바일 반응형 (화면이 작을 때) */
     @media (max-width: 768px) {
       .menu { display: none; }
       .grid-2 { grid-template-columns: 1fr; }
@@ -464,15 +467,15 @@
     <div class="grid-3-shorts" style="margin-bottom:40px;">
       
       <div style="border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/shorts_id_1" title="도면소생술1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/hFn690JarPM" title="도면소생술 사용법1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
       </div>
 
       <div style="border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/shorts_id_2" title="도면소생술2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/QHLEDT6Yf7Q" title="도면소생술 사용법2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
       </div>
 
       <div style="border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/shorts_id_3" title="도면소생술3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
+        <iframe width="100%" height="500" src="https://www.youtube.com/embed/NgUB-HSHFmU" title="도면소생술 사용법3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block;"></iframe>
       </div>
 
     </div>
